@@ -1,0 +1,16 @@
+.back-to-services {
+  background: transparent;
+  border: 2px solid #00c8ff;
+  color: #00c8ff;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 25px;
+  transition: all 0.3s ease;
+}
+
+.back-to-services:hover {
+  background: #00c8ff;
+  color: #061a2f;
+}

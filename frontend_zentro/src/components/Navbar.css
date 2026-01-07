@@ -1,0 +1,111 @@
+/* Navbar container */
+.navbar {
+  background: #061a2f;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Logo / Brand */
+.navbar h2 {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 700;
+  cursor: pointer;
+  margin: 0;
+  padding-left: 20px; /* ONLY left spacing */
+}
+
+/* Menu */
+.menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+  margin-left: auto; /* push menu fully to right */
+  padding-right: 0px; /* FINAL right edge control */
+}
+
+/* Menu items */
+.menu li {
+  color: #e6f0ff;
+  cursor: pointer;
+  font-weight: 600;
+  position: relative;
+  padding: 4px 0;
+  transition: color 0.3s ease;
+}
+
+.menu li:hover {
+  color: #00c8ff;
+}
+
+/* Neon underline */
+.menu li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #00c8ff, #1e90ff, #00c8ff);
+  background-size: 200% 100%;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.menu li:hover::after,
+.menu li.active::after {
+  width: 100%;
+  animation: neonMove 1.5s linear infinite;
+}
+
+@keyframes neonMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Hamburger (mobile) */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  color: #ffffff;
+  cursor: pointer;
+  padding-right: 20px;
+}
+
+/* ========================= */
+/* Responsive (Mobile) */
+/* ========================= */
+@media (max-width: 768px) {
+  .menu {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    background: #061a2f;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 0;
+    display: none;
+  }
+
+  .menu.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+    margin-left: auto;
+  }
+}

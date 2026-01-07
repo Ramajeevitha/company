@@ -1,0 +1,128 @@
+/* ================= MISSION SECTION ================= */
+.mission {
+  padding: 120px 8%;
+  background: #061a2f;
+  color: #e6f0ff;
+  text-align: center;
+  overflow: hidden;
+}
+
+.mission-container {
+  max-width: 1100px;
+  margin: auto;
+  animation: missionFadeUp 1.2s ease forwards;
+  opacity: 0;
+}
+
+/* Title */
+.mission-title {
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  position: relative;
+  color: #ffffff;
+}
+
+.mission-title::after {
+  content: "";
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(135deg, #1e90ff, #00bfff);
+  display: block;
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
+
+/* Description */
+.mission-text {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #cfe8ff;
+  margin-bottom: 70px;
+}
+
+/* ================= GRID ================= */
+.mission-points {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 35px;
+}
+
+/* ================= NEW CARD STYLE ================= */
+.mission-card {
+  position: relative;
+  background: #0b2545;
+  padding: 32px 30px 32px 36px;
+  border-radius: 12px;
+  text-align: left;
+  color: #e6f0ff;
+
+  /* Accent bar */
+  border-left: 4px solid transparent;
+  background-clip: padding-box;
+
+  /* Animation */
+  opacity: 0;
+  transform: translateX(-40px);
+  animation: missionSlideIn 0.9s ease forwards;
+
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Gradient accent */
+.mission-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #1e90ff, #00bfff);
+  border-radius: 4px 0 0 4px;
+}
+
+/* Hover effect */
+.mission-card:hover {
+  transform: translateX(6px);
+  box-shadow: 0 15px 35px rgba(0, 140, 255, 0.25);
+}
+
+/* Stagger animation */
+.mission-card:nth-child(1) { animation-delay: 0.2s; }
+.mission-card:nth-child(2) { animation-delay: 0.4s; }
+.mission-card:nth-child(3) { animation-delay: 0.6s; }
+.mission-card:nth-child(4) { animation-delay: 0.8s; }
+
+/* ================= ANIMATIONS ================= */
+@keyframes missionFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes missionSlideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .mission {
+    padding: 80px 6%;
+  }
+
+  .mission-title {
+    font-size: 2rem;
+  }
+
+  .mission-text {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,114 @@
+.footer {
+  position: relative;
+  background: linear-gradient(135deg, #061a2f, #020c1e);
+  color: #cfe8ff;
+  padding: 100px 8% 40px;
+  overflow: hidden;
+}
+
+.footer-pattern {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top, rgba(0,191,255,0.08), transparent 70%);
+  z-index: 0;
+}
+
+.footer-container {
+  position: relative;
+  z-index: 1;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 50px;
+  margin-bottom: 50px;
+}
+
+/* ================= BRAND ================= */
+.footer-logo {
+  width: 160px;
+  margin-bottom: 20px;
+}
+
+.footer-brand p {
+  line-height: 1.7;
+  color: #b9dcff;
+}
+
+/* ================= HEADINGS ================= */
+.footer-heading {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+/* ================= QUICK LINKS ================= */
+.footer-links {
+  padding: 0;
+}
+
+.footer-links li {
+  list-style: none;
+  margin-bottom: 12px;
+  cursor: pointer;
+  color: #b9dcff;
+  transition: color 0.3s ease;
+}
+
+.footer-links li:hover {
+  color: #00bfff;
+}
+
+/* visited stays same */
+.footer-links li:visited {
+  color: #b9dcff;
+}
+
+/* ================= CONTACT ================= */
+.footer-contact {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.footer-contact a {
+  color: #b9dcff;
+  text-decoration: none;
+}
+
+.footer-contact a:hover {
+  color: #00bfff;
+}
+
+/* ================= FOOTER BOTTOM ================= */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 25px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .footer {
+    padding: 80px 6% 30px;
+  }
+}
+/* ================= FOOTER TITLE UNDERLINE ================= */
+.footer-heading {
+  position: relative;
+}
+
+.footer-heading::after {
+  content: "";
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(135deg, #1e90ff, #00bfff);
+  display: block;
+  margin-top: 10px;
+  border-radius: 2px;
+}
