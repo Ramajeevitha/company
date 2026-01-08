@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./Contact.css";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -19,16 +21,13 @@ const Contact = () => {
     setStatus("loading");
 
     try {
-      const res = await fetch(
-        "https://company-2-pa4w.onrender.com/api/contact",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        }
-      );
+      const res = await fetch(`${API_URL}/api/contact`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
       if (res.ok) {
         setStatus("success");
@@ -37,6 +36,7 @@ const Contact = () => {
         setStatus("error");
       }
     } catch (error) {
+      console.error(error);
       setStatus("error");
     }
   };
@@ -73,11 +73,10 @@ const Contact = () => {
           required
         />
 
-        <button type="submit">
+        <button type="submit" disabled={status === "loading"}>
           {status === "loading" ? "Sending..." : "Send Message"}
         </button>
 
-        {/* STATUS MESSAGE */}
         {status === "success" && (
           <p className="form-status success">
             ✅ Message sent successfully!
