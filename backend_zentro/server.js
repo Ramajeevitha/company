@@ -7,20 +7,27 @@ dotenv.config();
 
 const app = express();
 
-/* Middleware */
-app.use(cors());
+/* ================= MIDDLEWARE ================= */
+app.use(
+  cors({
+    origin: "*", // allow frontend domain (Vercel/Netlify)
+    methods: ["GET", "POST"],
+  })
+);
+
 app.use(express.json());
 
-/* Routes */
+/* ================= ROUTES ================= */
 app.use("/api/contact", contactRoutes);
 
-/* Test route */
+/* ================= HEALTH CHECK ================= */
 app.get("/", (req, res) => {
   res.send("Zentro Backend Running 🚀");
 });
 
-/* Server */
+/* ================= SERVER ================= */
 const PORT = process.env.PORT || 5000;
+
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`✅ Server running on port ${PORT}`);
 });

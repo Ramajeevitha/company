@@ -19,11 +19,16 @@ const Contact = () => {
     setStatus("loading");
 
     try {
-      const res = await fetch("http://localhost:5000/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      const res = await fetch(
+        "https://company-1-xbae.onrender.com/api/contact",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       if (res.ok) {
         setStatus("success");
@@ -31,7 +36,7 @@ const Contact = () => {
       } else {
         setStatus("error");
       }
-    } catch (err) {
+    } catch (error) {
       setStatus("error");
     }
   };
@@ -72,7 +77,7 @@ const Contact = () => {
           {status === "loading" ? "Sending..." : "Send Message"}
         </button>
 
-        {/* ✅ STATUS TEXT BELOW BUTTON */}
+        {/* STATUS MESSAGE */}
         {status === "success" && (
           <p className="form-status success">
             ✅ Message sent successfully!
@@ -81,7 +86,7 @@ const Contact = () => {
 
         {status === "error" && (
           <p className="form-status error">
-            ❌ Failed to send message. Try again.
+            ❌ Failed to send message. Please try again.
           </p>
         )}
       </form>
