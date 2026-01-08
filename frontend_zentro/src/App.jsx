@@ -4,7 +4,7 @@ import {
   Route,
   useLocation
 } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -43,36 +43,39 @@ const ScrollHandler = () => {
 };
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Hide loader AFTER React mounts
+    const timer = setTimeout(() => {
+      setLoading(false);
+      const loader = document.getElementById("page-loader");
+      if (loader) loader.style.display = "none";
+    }, 900); // smooth delay
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) return null;
+
   return (
     <Router>
       <ScrollHandler />
       <Navbar />
 
       <Routes>
-        {/* HOME PAGE */}
         <Route
           path="/"
           element={
             <>
-              <div id="home">
-                <Hero />
-              </div>
-
-              {/* 🔥 FIX: div instead of section */}
-              <div id="services">
-                <Services />
-              </div>
-
-              <div id="about">
-                <About />
-              </div>
-
+              <div id="home"><Hero /></div>
+              <div id="services"><Services /></div>
+              <div id="about"><About /></div>
               <Footer />
             </>
           }
         />
 
-        {/* SERVICE DETAIL PAGES */}
         <Route path="/services/mern-stack" element={<MernService />} />
         <Route path="/services/pern-stack" element={<PernService />} />
         <Route path="/services/frontend" element={<FrontendService />} />
@@ -89,8 +92,6 @@ function App() {
         <Route path="/services/pcb" element={<PCBService />} />
         <Route path="/services/iot" element={<IoTService />} />
         <Route path="/service/wood-3d" element={<Wood3DService />} />
-       
-
       </Routes>
     </Router>
   );
