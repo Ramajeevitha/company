@@ -6,7 +6,7 @@ export const sendContactEmails = async ({ name, email, message }) => {
   // Email to Admin
   await resend.emails.send({
     from: "Zentro <onboarding@resend.dev>",
-    to: ["zentrooffice@gmail.com"],
+    to: process.env.EMAIL_USER,
     subject: "📩 New Contact Form Submission",
     html: `
       <h2>New Message Received</h2>
