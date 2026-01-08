@@ -3,10 +3,10 @@ import { Resend } from "resend";
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export const sendContactEmails = async ({ name, email, message }) => {
-  // Email to Admin
+  // ✅ EMAIL TO ADMIN
   await resend.emails.send({
-    from: "Zentro <onboarding@resend.dev>",
-    to: process.env.EMAIL_USER,
+    from: "Zentro <zentrooffice@gmail.com>",
+    to: ["zentrooffice@gmail.com"],
     subject: "📩 New Contact Form Submission",
     html: `
       <h2>New Message Received</h2>
@@ -17,9 +17,9 @@ export const sendContactEmails = async ({ name, email, message }) => {
     `,
   });
 
-  // Auto reply to User (Styled like your screenshot)
+  // ✅ AUTO REPLY TO USER
   await resend.emails.send({
-    from: "Zentro Team <onboarding@resend.dev>",
+    from: "Zentro Team <zentrooffice@gmail.com>",
     to: [email],
     subject: "✨ Thanks for contacting Zentro!",
     html: `
@@ -55,13 +55,12 @@ export const sendContactEmails = async ({ name, email, message }) => {
         </div>
 
         <p>
-          Our team has received your message and will get back to you as soon as possible.
+          Our team will get back to you soon.
         </p>
 
-        <br/>
         <p>Warm regards,<br/><b>Zentro Team</b></p>
 
-        <hr style="margin-top:30px;border-color:#1e3a5f;" />
+        <hr />
         <p style="font-size:12px;color:#94a3b8;text-align:center;">
           © 2026 Zentro. All rights reserved.
         </p>
