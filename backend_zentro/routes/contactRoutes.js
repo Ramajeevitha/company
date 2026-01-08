@@ -12,10 +12,10 @@ router.post("/", async (req, res) => {
       return res.status(400).json({ error: "All fields are required" });
     }
 
-    // Save to MongoDB
+    // Save to DB
     const contact = await Contact.create({ name, email, message });
 
-    // Send emails (Resend)
+    // Send emails
     await sendContactEmails({ name, email, message });
 
     res.status(201).json({
@@ -24,8 +24,8 @@ router.post("/", async (req, res) => {
       data: contact,
     });
   } catch (error) {
-    console.error("CONTACT ERROR:", error);
-    res.status(500).json({ error: "Server error" });
+    console.error(error);
+    res.status(500).json({ error: "Email sending failed" });
   }
 });
 
