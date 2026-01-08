@@ -10,10 +10,14 @@ const app = express();
 /* ================= MIDDLEWARE ================= */
 app.use(
   cors({
-    origin: "*", // allow frontend domain (Vercel/Netlify)
-    methods: ["GET", "POST"],
+    origin: "*", // allow all origins (safe for API)
+    methods: ["GET", "POST", "OPTIONS"],
+    allowedHeaders: ["Content-Type"],
   })
 );
+
+// Handle preflight requests
+app.options("*", cors());
 
 app.use(express.json());
 

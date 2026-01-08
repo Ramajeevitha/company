@@ -20,7 +20,7 @@ const Contact = () => {
 
     try {
       const res = await fetch(
-        "https://company-1-xbae.onrender.com/api/contact",
+        "https://company-2-pa4w.onrender.com/api/contact",
         {
           method: "POST",
           headers: {
