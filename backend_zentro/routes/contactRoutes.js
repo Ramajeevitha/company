@@ -5,8 +5,12 @@ import Contact from "../models/Contact.js";
 const router = express.Router();
 
 /* ================= EMAIL CONFIG ================= */
+import nodemailer from "nodemailer";
+
 const transporter = nodemailer.createTransport({
-  service: "gmail",
+  host: "smtp.gmail.com",
+  port: 465,
+  secure: true, // ✅ IMPORTANT
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_APP_PASS,
