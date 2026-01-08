@@ -1,38 +1,30 @@
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 
-const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 587,
-  secure: false, // TLS
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-});
+const resend = new Resend(process.env.RESEND_API_KEY);
 
-export const sendContactEmail = async ({ name, email, message }) => {
-  // Email to YOU
-  await transporter.sendMail({
-    from: `"Zentro Contact" <${process.env.EMAIL_USER}>`,
+export const sendContactEmails = async ({ name, email, message }) => {
+  // Email to ADMIN
+  await resend.emails.send({
+    from: "Zentro <onboarding@resend.dev>",
     to: process.env.EMAIL_USER,
-    subject: "New Contact Form Message",
+    subject: "📩 New Contact Form Submission",
     html: `
-      <h3>New Message Received</h3>
+      <h3>New Message</h3>
       <p><b>Name:</b> ${name}</p>
       <p><b>Email:</b> ${email}</p>
-      <p><b>Message:</b><br/>${message}</p>
+      <p><b>Message:</b></p>
+      <p>${message}</p>
     `,
   });
 
-  // Auto reply to user
-  await transporter.sendMail({
-    from: `"Zentro Team" <${process.env.EMAIL_USER}>`,
+  // Auto reply to USER
+  await resend.emails.send({
+    from: "Zentro Team <onboarding@resend.dev>",
     to: email,
-    subject: "We received your message",
+    subject: "Thanks for contacting Zentro",
     html: `
       <p>Hi ${name},</p>
-      <p>Thank you for contacting <b>Zentro</b>.</p>
-      <p>We have received your message and will get back to you shortly.</p>
+      <p>We received your message and will contact you soon.</p>
       <br/>
       <p>— Zentro Team</p>
     `,
