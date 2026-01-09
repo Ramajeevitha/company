@@ -3,9 +3,24 @@ import { Resend } from "resend";
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export const sendContactEmails = async ({ name, email, message }) => {
+  /* ================= ADMIN EMAIL ================= */
   await resend.emails.send({
-    from: "Zentro <onboarding@resend.dev>", // ✅ allowed sender
-    to: email,                              // ✅ USER email
+    from: "Zentro Contact <onboarding@resend.dev>",
+    to: [process.env.ADMIN_EMAIL],
+    subject: "📩 New Contact Form Submission",
+    html: `
+      <h2>New Message Received</h2>
+      <p><b>Name:</b> ${name}</p>
+      <p><b>Email:</b> ${email}</p>
+      <p><b>Message:</b></p>
+      <p>${message}</p>
+    `,
+  });
+
+  /* ================= USER AUTO REPLY ================= */
+  await resend.emails.send({
+    from: "Zentro Team <onboarding@resend.dev>",
+    to: [email],
     subject: "✨ Thanks for contacting Zentro!",
     html: `
       <div style="
@@ -40,7 +55,7 @@ export const sendContactEmails = async ({ name, email, message }) => {
         </div>
 
         <p>
-          Our team has received your message and will get back to you soon.
+          Our team has received your message and will get back to you shortly.
         </p>
 
         <br/>
