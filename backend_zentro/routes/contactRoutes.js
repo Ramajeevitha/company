@@ -12,10 +12,8 @@ router.post("/", async (req, res) => {
       return res.status(400).json({ error: "All fields are required" });
     }
 
-    // Save to DB
     const contact = await Contact.create({ name, email, message });
 
-    // Send emails
     await sendContactEmails({ name, email, message });
 
     res.status(201).json({
@@ -28,5 +26,6 @@ router.post("/", async (req, res) => {
     res.status(500).json({ error: "Email sending failed" });
   }
 });
+
 
 export default router;
