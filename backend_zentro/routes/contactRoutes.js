@@ -12,20 +12,20 @@ router.post("/", async (req, res) => {
       return res.status(400).json({ error: "All fields are required" });
     }
 
-    // Save to DB
+    // Save to MongoDB
     const contact = await Contact.create({ name, email, message });
 
-    // Send emails
-    await sendContactEmails({ name, email, message });
+    // Send emails (NON-BLOCKING SAFE)
+   await sendContactEmails({ name, email, message });
+
 
     res.status(201).json({
       success: true,
       message: "Message sent successfully",
-      data: contact,
     });
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: "Email sending failed" });
+    console.error("❌ Contact API Error:", error);
+    res.status(500).json({ error: "Something went wrong" });
   }
 });
 
