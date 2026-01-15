@@ -4,29 +4,24 @@ import zentroLogo from "../assets/zentro.png";
 const Footer = () => {
   const scrollToSection = (id) => {
     const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    }
+    if (el) el.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <footer className="footer" id="contact">
+    <footer className="footer">
       <div className="footer-pattern"></div>
 
       <div className="footer-container">
         <div className="footer-grid">
 
-          {/* ================= BRAND ================= */}
           <div className="footer-brand">
             <img src={zentroLogo} alt="Zentro" className="footer-logo" />
-
             <p>
               Zentro is a modern technology company delivering scalable,
               secure, and innovative digital solutions for businesses.
             </p>
           </div>
 
-          {/* ================= QUICK LINKS ================= */}
           <div>
             <h4 className="footer-heading">Quick Links</h4>
             <ul className="footer-links">
@@ -37,12 +32,13 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* ================= CONTACT ================= */}
           <div>
             <h4 className="footer-heading">Contact</h4>
             <ul className="footer-contact">
               <li>
-                <a href="mailto:contact@zentro.com">zentrooffice@gmail.com</a>
+                <a href="mailto:zentrooffice@gmail.com">
+                  zentrooffice@gmail.com
+                </a>
               </li>
               <li>
                 <a
@@ -58,7 +54,6 @@ const Footer = () => {
 
         </div>
 
-        {/* ================= FOOTER BOTTOM ================= */}
         <div className="footer-bottom">
           <p>© {new Date().getFullYear()} Zentro. All rights reserved.</p>
         </div>

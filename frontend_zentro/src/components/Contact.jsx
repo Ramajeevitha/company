@@ -10,7 +10,7 @@ const Contact = () => {
     message: "",
   });
 
-  const [status, setStatus] = useState(""); // success | error | loading
+  const [status, setStatus] = useState("");
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -23,9 +23,7 @@ const Contact = () => {
     try {
       const res = await fetch(`${API_URL}/api/contact`, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
 
@@ -78,9 +76,7 @@ const Contact = () => {
         </button>
 
         {status === "success" && (
-          <p className="form-status success">
-            ✅ Message sent successfully!
-          </p>
+          <p className="form-status success">✅ Message sent successfully!</p>
         )}
 
         {status === "error" && (

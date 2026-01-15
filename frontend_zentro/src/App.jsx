@@ -2,7 +2,7 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  useLocation
+  useLocation,
 } from "react-router-dom";
 import { useEffect, useState } from "react";
 
@@ -10,9 +10,10 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Services from "./components/Services";
 import About from "./components/About";
-import Contact from "./components/Contact"; // ✅ component
+import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
+/* Pages */
 import MernService from "./pages/MernService";
 import PernService from "./pages/PernService";
 import FrontendService from "./pages/FrontendService";
@@ -30,10 +31,7 @@ import PCBService from "./pages/PCBService";
 import IoTService from "./pages/IoTService";
 import Wood3DService from "./pages/Wood3DService";
 
-import { Contact as ContactIcon } from "lucide-react"; // ✅ renamed
-
-
-/* Smooth scroll handler */
+/* Scroll handler */
 const ScrollHandler = () => {
   const location = useLocation();
 
@@ -51,12 +49,11 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Hide loader AFTER React mounts
     const timer = setTimeout(() => {
       setLoading(false);
       const loader = document.getElementById("page-loader");
       if (loader) loader.style.display = "none";
-    }, 900); // smooth delay
+    }, 700);
 
     return () => clearTimeout(timer);
   }, []);
@@ -76,7 +73,12 @@ function App() {
               <div id="home"><Hero /></div>
               <div id="services"><Services /></div>
               <div id="about"><About /></div>
-               <div id="contact"><Contact/></div>
+
+              {/* ✅ ONLY ONE CONTACT FORM */}
+              <div id="contact">
+                <Contact />
+              </div>
+
               <Footer />
             </>
           }
