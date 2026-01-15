@@ -63,7 +63,7 @@ const About = () => {
 
       <Mission />
       <Team />
-      <Contact />
+    
     </>
   );
 };

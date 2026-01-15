@@ -33,14 +33,13 @@ const Contact = () => {
       } else {
         setStatus("error");
       }
-    } catch (error) {
-      console.error(error);
+    } catch {
       setStatus("error");
     }
   };
 
   return (
-    <section className="contact">
+    <section className="contact" id="contact">
       <h2>Contact Us</h2>
 
       <form className="contact-form" onSubmit={handleSubmit}>
@@ -80,9 +79,7 @@ const Contact = () => {
         )}
 
         {status === "error" && (
-          <p className="form-status error">
-            ❌ Failed to send message. Please try again.
-          </p>
+          <p className="form-status error">❌ Failed to send message.</p>
         )}
       </form>
     </section>
