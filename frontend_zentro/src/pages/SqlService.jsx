@@ -8,8 +8,7 @@ const SqlService = () => {
 
   return (
     <section className="mern">
-      {/* Background Video */}
-      <video
+     <video
         className="mern-video"
         src="/vdoo.mp4"
         autoPlay

@@ -8,7 +8,7 @@ const TechnicalSupport = () => {
 
   return (
     <section className="mern">
-      <video
+       <video
         className="mern-video"
         src="/vdoo.mp4"
         autoPlay

@@ -9,7 +9,7 @@ const DjangoService = () => {
   return (
     <section className="mern">
   
-      <video
+        <video
         className="mern-video"
         src="/vdoo.mp4"
         autoPlay
@@ -17,7 +17,6 @@ const DjangoService = () => {
         muted
         playsInline
       />
-
       
       <div className="mern-overlay">
          <BackToServices />

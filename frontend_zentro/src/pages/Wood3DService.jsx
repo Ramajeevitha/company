@@ -4,9 +4,8 @@ import BackToServices from "../components/BackToServices";
 const Wood3DService = () => {
   return (
     <section className="wood3d">
-      {/* Background Video */}
-      <video
-        className="wood3d-video"
+       <video
+        className="mern-video"
         src="/vdoo.mp4"
         autoPlay
         loop

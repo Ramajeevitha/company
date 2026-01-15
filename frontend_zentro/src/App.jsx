@@ -10,7 +10,9 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Services from "./components/Services";
 import About from "./components/About";
+import Contact from "./components/Contact"; // ✅ component
 import Footer from "./components/Footer";
+
 import MernService from "./pages/MernService";
 import PernService from "./pages/PernService";
 import FrontendService from "./pages/FrontendService";
@@ -27,6 +29,9 @@ import DesktopSupport from "./pages/DesktopSupport";
 import PCBService from "./pages/PCBService";
 import IoTService from "./pages/IoTService";
 import Wood3DService from "./pages/Wood3DService";
+
+import { Contact as ContactIcon } from "lucide-react"; // ✅ renamed
+
 
 /* Smooth scroll handler */
 const ScrollHandler = () => {
@@ -71,6 +76,7 @@ function App() {
               <div id="home"><Hero /></div>
               <div id="services"><Services /></div>
               <div id="about"><About /></div>
+               <div id="contact"><Contact/></div>
               <Footer />
             </>
           }

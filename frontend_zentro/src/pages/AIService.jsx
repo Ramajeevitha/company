@@ -4,7 +4,7 @@ import BackToServices from "../components/BackToServices";
 const AIService = () => {
   return (
     <section className="mern">
-      <video
+       <video
         className="mern-video"
         src="/vdoo.mp4"
         autoPlay
@@ -12,7 +12,6 @@ const AIService = () => {
         muted
         playsInline
       />
-
       <div className="mern-overlay">
         <BackToServices />
 
