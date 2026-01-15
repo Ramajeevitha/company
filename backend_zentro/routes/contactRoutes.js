@@ -8,24 +8,16 @@ router.post("/", async (req, res) => {
   try {
     const { name, email, message } = req.body;
 
-    if (!name || !email || !message) {
-      return res.status(400).json({ error: "All fields are required" });
-    }
-
     // Save to MongoDB
-    const contact = await Contact.create({ name, email, message });
+    await Contact.create({ name, email, message });
 
-    // Send emails (NON-BLOCKING SAFE)
-   await sendContactEmails({ name, email, message });
+    // Send emails via Brevo
+    await sendContactEmails({ name, email, message });
 
-
-    res.status(201).json({
-      success: true,
-      message: "Message sent successfully",
-    });
+    res.status(200).json({ success: true });
   } catch (error) {
     console.error("❌ Contact API Error:", error);
-    res.status(500).json({ error: "Something went wrong" });
+    res.status(500).json({ success: false });
   }
 });
 
