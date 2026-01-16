@@ -8,14 +8,19 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors({
-  origin: [
-    "https://company-git-main-ramajeevithas-projects.vercel.app",
-    "https://zentro-tech.vercel.app/",
-    "https://company-chi-lemon.vercel.app",
-    "http://localhost:5173",
-  ],
-}));
+app.use(
+  cors({
+    origin: [
+      "https://zentro-tech.vercel.app",
+      "http://localhost:5173",
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
+
+// Preflight
+app.options("*", cors());
 
 app.use(express.json());
 app.use("/api/contact", contactRoutes);
