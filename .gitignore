@@ -1,0 +1,15 @@
+# Node
+node_modules/
+
+# Env files (VERY IMPORTANT)
+.env
+backend_zentro/.env
+frontend/.env
+
+# Build
+dist/
+build/
+
+# Logs
+npm-debug.log*
+yarn-error.log*
