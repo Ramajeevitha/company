@@ -18,7 +18,6 @@ const Navbar = () => {
     { name: "Contact", id: "contact" },
   ];
 
-  /* Move underline */
   const moveUnderline = (id) => {
     const el = menuRef.current[id];
     if (el && underlineRef.current) {
@@ -27,19 +26,15 @@ const Navbar = () => {
     }
   };
 
-  /* Scroll after navigation */
   useEffect(() => {
     if (location.pathname === "/") {
-      setTimeout(() => {
-        moveUnderline(active);
-      }, 50);
+      setTimeout(() => moveUnderline(active), 50);
     }
-  }, [location.pathname]);
+  }, [location.pathname, active]);
 
-  /* Handle menu click */
   const handleMenuClick = (id) => {
     setActive(id);
-    setOpen(false);
+    setOpen(false); // close menu on mobile
 
     navigate("/", {
       state: { scrollTo: id },
@@ -52,7 +47,7 @@ const Navbar = () => {
 
       {/* Hamburger */}
       <div
-        className={`hamburger ${open ? "open" : ""}`}
+        className="hamburger"
         onClick={() => setOpen(!open)}
       >
         <span />
@@ -60,7 +55,7 @@ const Navbar = () => {
         <span />
       </div>
 
-      <ul className={`menu ${open ? "show" : ""}`}>
+      <ul className={`menu ${open ? "active" : ""}`}>
         {menuItems.map((item) => (
           <li
             key={item.id}
@@ -71,7 +66,6 @@ const Navbar = () => {
             {item.name}
           </li>
         ))}
-
         <span ref={underlineRef} className="menu-underline" />
       </ul>
     </nav>
