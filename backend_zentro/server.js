@@ -11,6 +11,7 @@ const app = express();
 app.use(cors({
   origin: [
     "https://company-git-main-ramajeevithas-projects.vercel.app",
+    "https://company-chi-lemon.vercel.app",
     "http://localhost:5173",
   ],
 }));
