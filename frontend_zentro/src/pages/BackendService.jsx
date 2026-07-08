@@ -1,17 +1,26 @@
-import "../pages/MernService.css"; // ✅ reuse existing CSS
+import "../pages/MernService.css";
 import BackToServices from "../components/BackToServices";
+import GradientBlinds from "../components/GradientBlinds";
 
 const BackendService = () => {
   return (
     <section className="mern">
-       <video
-        className="mern-video"
-        src="/vdoo.mp4"
-        autoPlay
-        loop
-        muted
-        playsInline
-      />
+      <div className="mern-bg">
+        <GradientBlinds
+          gradientColors={["#00c6ff", "#0072ff"]}
+          angle={20}
+          noise={0.15}
+          blindCount={16}
+          blindMinWidth={60}
+          spotlightRadius={0.45}
+          spotlightSoftness={1.2}
+          spotlightOpacity={1.1}
+          mouseDampening={0.08}
+          distortAmount={2.2}
+          shineDirection="left"
+          mixBlendMode="lighten"
+        />
+      </div>
 
       <div className="mern-overlay">
         <BackToServices />
@@ -38,11 +47,10 @@ const BackendService = () => {
           <div className="mern-card">
             <h3>Backend Technologies</h3>
             <ul>
-              <li>Node.js & Express.js</li>
+              <li>Node.js</li>
+              <li>Express.js</li>
               <li>Django & Django REST Framework</li>
               <li>MongoDB, PostgreSQL, MySQL</li>
-              <li>JWT & OAuth Security</li>
-              <li>Docker & API Deployment</li>
             </ul>
           </div>
         </div>

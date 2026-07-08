@@ -1,11 +1,8 @@
-import { useNavigate } from "react-router-dom";
 import "./MernService.css";
 import BackToServices from "../components/BackToServices";
 import GradientBlinds from "../components/GradientBlinds";
 
-const PCBService = () => {
-  const navigate = useNavigate();
-
+const Dsa = () => {
   return (
     <section className="mern">
       <GradientBlinds
@@ -24,34 +21,36 @@ const PCBService = () => {
                 />
 
       <div className="mern-overlay">
-        {/* Back Button */}
         <BackToServices />
 
-        <h1 className="mern-title">PCB Designing</h1>
+        <h1 className="mern-title">DSA Training & Problem Solving</h1>
 
         <p className="mern-subtitle">
-          Designing professional printed circuit boards (PCBs) for electronics projects.
+          Strengthening problem-solving skills with Data Structures and
+          Algorithms training designed to improve coding efficiency, logic,
+          and interview readiness.
         </p>
 
         <div className="mern-content">
           <div className="mern-card">
-            <h3>What We Do</h3>
+            <h3>What We Cover</h3>
             <ul>
-              <li>PCB Schematic Design</li>
-              <li>Multi-layer PCB Layouts</li>
-              <li>Component Placement & Routing</li>
-              <li>Prototyping & Testing</li>
-              <li>Manufacturing-ready Gerber Files</li>
+              <li>Arrays, Strings & Linked Lists</li>
+              <li>Stacks, Queues & Hashing</li>
+              <li>Trees, Graphs & Traversals</li>
+              <li>Recursion, Backtracking & Dynamic Programming</li>
+              <li>Sorting, Searching & Greedy Algorithms</li>
             </ul>
           </div>
 
           <div className="mern-card">
-            <h3>Our Tools</h3>
+            <h3>Our DSA Approach</h3>
             <ul>
-              <li>Eagle – PCB Design</li>
-              <li>KiCad – Open-source PCB Tool</li>
-              <li>Altium Designer – Professional Layouts</li>
-              <li>Fritzing – Prototyping</li>
+              <li>Concept-based Learning</li>
+              <li>Step-by-step Problem Solving</li>
+              <li>Time & Space Complexity Analysis</li>
+              <li>Interview-focused Coding Practice</li>
+              <li>Competitive Programming Techniques</li>
             </ul>
           </div>
         </div>
@@ -60,4 +59,4 @@ const PCBService = () => {
   );
 };
 
-export default PCBService;
+export default Dsa;

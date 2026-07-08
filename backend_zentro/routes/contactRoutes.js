@@ -1,6 +1,5 @@
 import express from "express";
 import Contact from "../models/Contact.js";
-import { sendContactEmails } from "../utils/sendEmail.js";
 
 const router = express.Router();
 
@@ -8,16 +7,32 @@ router.post("/", async (req, res) => {
   try {
     const { name, email, message } = req.body;
 
-    // Save to MongoDB
-    await Contact.create({ name, email, message });
+    // validation
+    if (!name || !email || !message) {
+      return res.status(400).json({
+        success: false,
+        message: "All fields are required",
+      });
+    }
 
-    // Send emails via Brevo
-    await sendContactEmails({ name, email, message });
+    // save in MongoDB
+    const newContact = await Contact.create({
+      name,
+      email,
+      message,
+    });
 
-    res.status(200).json({ success: true });
+    return res.status(201).json({
+      success: true,
+      message: "Message submitted successfully",
+      data: newContact,
+    });
   } catch (error) {
-    console.error("❌ Contact API Error:", error);
-    res.status(500).json({ success: false });
+    console.error("❌ Contact Save Error:", error);
+    return res.status(500).json({
+      success: false,
+      message: "Failed to save contact message",
+    });
   }
 });
 

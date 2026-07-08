@@ -2,11 +2,25 @@ import mongoose from "mongoose";
 
 const contactSchema = new mongoose.Schema(
   {
-    name: String,
-    email: String,
-    message: String,
+    name: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    email: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    message: {
+      type: String,
+      required: true,
+      trim: true,
+    },
   },
   { timestamps: true }
 );
 
-export default mongoose.model("Contact", contactSchema);
+const Contact = mongoose.model("Contact", contactSchema);
+
+export default Contact;

@@ -1,7 +1,7 @@
 import "./About.css";
 import Team from "./Team";
 import Mission from "./Mission";
-import Contact from "./Contact";
+
 
 const About = () => {
   return (

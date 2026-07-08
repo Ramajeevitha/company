@@ -19,35 +19,107 @@ const Navbar = () => {
   ];
 
   const moveUnderline = (id) => {
+    if (window.innerWidth <= 768) return;
+
     const el = menuRef.current[id];
-    if (el && underlineRef.current) {
-      underlineRef.current.style.width = `${el.offsetWidth}px`;
-      underlineRef.current.style.left = `${el.offsetLeft}px`;
+    const underline = underlineRef.current;
+
+    if (el && underline) {
+      underline.style.width = `${el.offsetWidth}px`;
+      underline.style.left = `${el.offsetLeft}px`;
+      underline.style.opacity = "1";
     }
   };
 
+  // route based active item
   useEffect(() => {
-    if (location.pathname === "/") {
-      setTimeout(() => moveUnderline(active), 50);
+    if (location.pathname.startsWith("/services")) {
+      setActive("services");
+      setTimeout(() => moveUnderline("services"), 80);
+      return;
     }
-  }, [location.pathname, active]);
+
+    if (location.pathname === "/") {
+      const target = location.state?.scrollTo || "home";
+      setActive(target);
+
+      setTimeout(() => {
+        moveUnderline(target);
+      }, 120);
+    }
+  }, [location]);
+
+  // scroll spy for home page sections
+  useEffect(() => {
+    if (location.pathname !== "/") return;
+
+    const sections = [
+      { id: "home", el: document.getElementById("home") },
+      { id: "services", el: document.getElementById("services") },
+      { id: "about", el: document.getElementById("about") },
+      { id: "contact", el: document.getElementById("contact") },
+    ];
+
+    const handleScroll = () => {
+      const scrollPos = window.scrollY + 140;
+
+      let current = "home";
+
+      for (const section of sections) {
+        if (!section.el) continue;
+
+        const top = section.el.offsetTop;
+        const height = section.el.offsetHeight;
+
+        if (scrollPos >= top && scrollPos < top + height) {
+          current = section.id;
+        }
+      }
+
+      setActive((prev) => {
+        if (prev !== current) {
+          moveUnderline(current);
+          return current;
+        }
+        return prev;
+      });
+    };
+
+    const handleResize = () => moveUnderline(active);
+
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
+
+    setTimeout(() => {
+      handleScroll();
+      moveUnderline(active);
+    }, 100);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [location.pathname]);
 
   const handleMenuClick = (id) => {
     setActive(id);
-    setOpen(false); // close menu on mobile
+    setOpen(false);
 
     navigate("/", {
       state: { scrollTo: id },
     });
+
+    setTimeout(() => moveUnderline(id), 120);
   };
 
   return (
     <nav className="navbar">
-      <h2 onClick={() => handleMenuClick("home")}>Zentro</h2>
+      <h2 className="navbar-logo" onClick={() => handleMenuClick("home")}>
+        Zentro
+      </h2>
 
-      {/* Hamburger */}
       <div
-        className="hamburger"
+        className={`hamburger ${open ? "open" : ""}`}
         onClick={() => setOpen(!open)}
       >
         <span />

@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import "./MernService.css"; 
 import BackToServices from "../components/BackToServices";
+import GradientBlinds from "../components/GradientBlinds";
 
 
 const FrontendService = () => {
@@ -9,14 +10,20 @@ const FrontendService = () => {
   return (
     <section className="mern">
 
-        <video
-        className="mern-video"
-        src="/vdoo.mp4"
-        autoPlay
-        loop
-        muted
-        playsInline
-      />
+        <GradientBlinds
+                  gradientColors={["#00c6ff", "#0072ff"]}
+                  angle={20}
+                  noise={0.15}
+                  blindCount={16}
+                  blindMinWidth={60}
+                  spotlightRadius={0.45}
+                  spotlightSoftness={1.2}
+                  spotlightOpacity={1.1}
+                  mouseDampening={0.08}
+                  distortAmount={2.2}
+                  shineDirection="left"
+                  mixBlendMode="lighten"
+                />
 
   
       <div className="mern-overlay">
@@ -42,11 +49,11 @@ const FrontendService = () => {
           <div className="mern-card">
             <h3>Our Frontend Tech Stack</h3>
             <ul>
-              <li>HTML5, CSS3, JavaScript (ES6+)</li>
+              <li>HTML5</li>
+              <li>CSS3</li>
+              <li>JavaScript (ES6+)</li>
               <li>React.js – Frontend Library</li>
-              <li>Redux / Context API – State Management</li>
-              <li>Tailwind CSS / Bootstrap – Styling Frameworks</li>
-              <li>Next.js – Optional Server-Side Rendering</li>
+              
             </ul>
           </div>
         </div>

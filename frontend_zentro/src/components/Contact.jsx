@@ -23,18 +23,31 @@ const Contact = () => {
     try {
       const res = await fetch(`${API_URL}/api/contact`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify(formData),
       });
 
-      if (res.ok) {
+      const data = await res.json();
+
+      if (res.ok && data.success) {
         setStatus("success");
-        setFormData({ name: "", email: "", message: "" });
+        alert("Message submitted successfully ✅");
+
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+        });
       } else {
         setStatus("error");
+        alert(data.message || "Failed to submit message ❌");
       }
-    } catch {
+    } catch (error) {
+      console.error("Submit error:", error);
       setStatus("error");
+      alert("Server error. Please try again ❌");
     }
   };
 
@@ -71,16 +84,8 @@ const Contact = () => {
         />
 
         <button type="submit" disabled={status === "loading"}>
-          {status === "loading" ? "Sending..." : "Send Message"}
+          {status === "loading" ? "Submitting..." : "Send Message"}
         </button>
-
-        {status === "success" && (
-          <p className="form-status success">✅ Message sent successfully!</p>
-        )}
-
-        {status === "error" && (
-          <p className="form-status error">❌ Failed to send message.</p>
-        )}
       </form>
     </section>
   );

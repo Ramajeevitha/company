@@ -19,10 +19,8 @@ app.use(
   })
 );
 
-// Preflight
-app.options("*", cors());
-
 app.use(express.json());
+
 app.use("/api/contact", contactRoutes);
 
 mongoose
