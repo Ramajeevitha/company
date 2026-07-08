@@ -15,7 +15,7 @@ const Navbar = () => {
     { name: "Home", id: "home" },
     { name: "Services", id: "services" },
     { name: "About", id: "about" },
-    { name: "Contact", id: "contact" },
+    { name: "Contact", id: "footer" },
   ];
 
   const moveUnderline = (id) => {

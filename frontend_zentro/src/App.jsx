@@ -1,7 +1,7 @@
 import {
   BrowserRouter as Router,
   Routes,
- Route,
+  Route,
   useLocation,
 } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -10,7 +10,6 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Services from "./components/Services";
 import About from "./components/About";
-import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 /* Pages */
@@ -41,7 +40,11 @@ const ScrollHandler = () => {
         }
 
         // clear state
-        window.history.replaceState({}, document.title, window.location.pathname);
+        window.history.replaceState(
+          {},
+          document.title,
+          window.location.pathname,
+        );
       }, 120);
     }
   }, [location]);
@@ -86,11 +89,10 @@ function App() {
                 <About />
               </div>
 
-              <div id="contact">
-                <Contact />
-              </div>
 
-              <Footer />
+              <div id="footer">
+                <Footer />
+              </div>
             </>
           }
         />
