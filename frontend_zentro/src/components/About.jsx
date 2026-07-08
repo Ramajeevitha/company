@@ -2,18 +2,17 @@ import "./About.css";
 import Team from "./Team";
 import Mission from "./Mission";
 
-
 const About = () => {
   return (
     <>
       <section className="about">
-       
         <div className="about-overlay">
           <h2 className="about-title">About Us</h2>
 
           <p className="about-subtitle">
-            We are a technology‑driven team delivering reliable digital solutions
-            for businesses and individuals.
+            Zentro is a technology-driven company providing modern web solutions
+            and industry-focused courses to help businesses grow and individuals
+            build strong technical skills.
           </p>
 
           <div className="about-grid">
@@ -21,25 +20,28 @@ const About = () => {
               <h3>Who We Are</h3>
               <p>
                 We are a passionate team of developers, designers, and technical
-                experts specializing in full‑stack development, UI/UX design,
-                and IT support services.
+                mentors specializing in full-stack development, UI/UX design,
+                IT support, and practical tech training.
               </p>
             </div>
 
             <div className="about-card">
               <h3>What We Do</h3>
               <p>
-                From scalable web applications to enterprise support systems,
-                we build secure, high‑performance solutions tailored to your
-                needs.
+                We build reliable websites, web applications, and digital
+                solutions for businesses while also offering courses and
+                training programs in development, design, databases, and
+                technical skills for students and professionals.
               </p>
             </div>
 
             <div className="about-card">
               <h3>Why Choose Us</h3>
               <p>
-                We focus on quality, performance, and long‑term reliability
-                while maintaining clear communication and timely delivery.
+                We combine real-world project expertise with quality learning
+                experiences, helping clients get scalable digital solutions and
+                learners gain practical skills that matter in today’s tech
+                industry.
               </p>
             </div>
           </div>
@@ -63,7 +65,6 @@ const About = () => {
 
       <Mission />
       <Team />
-    
     </>
   );
 };

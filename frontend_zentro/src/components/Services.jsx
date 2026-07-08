@@ -26,16 +26,9 @@ const Services = () => {
 
   return (
     <section className="services">
-      <video
-        className="team-video"
-        src="/vdoo.mp4"
-        autoPlay
-        loop
-        muted
-        playsInline
-      />
+    
 
-      <h2>Our Services</h2>
+      <h2>Our Services and Courses</h2>
 
       <div className="service-section">
         <h3 className="service-heading">Software Solutions</h3>
