@@ -4,7 +4,11 @@
   width: 100%;
   overflow: hidden;
   color: white;
-  background: #050816;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 140px 8% 80px; 
+  box-sizing: border-box;
   isolation: isolate;
 }
 
@@ -15,86 +19,161 @@
   overflow: hidden;
 }
 
+
 .mern-bg > * {
-  position: absolute;
-  inset: 0;
   width: 100%;
   height: 100%;
 }
 
+.mern-bg canvas,
+.mern-bg svg {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+
+.mern::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(2, 6, 23, 0.40) 0%,
+      rgba(2, 6, 23, 0.58) 45%,
+      rgba(2, 6, 23, 0.72) 100%
+    );
+  z-index: 1;
+  pointer-events: none;
+}
+
+
 .mern-overlay {
   position: relative;
-  z-index: 1;
-  min-height: 100vh;
+  z-index: 2;
   width: 100%;
-  padding: 120px 20px 60px;
-  box-sizing: border-box;
-  background: rgba(0, 0, 0, 0.18);
+  max-width: 1200px;
+  text-align: center;
 }
 
 .mern-title {
-  text-align: center;
-  font-size: 3.5rem;
-  font-weight: 700;
-  margin: 40px 0 20px;
+  font-size: 3.4rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 18px 0 20px;
+  color: #ffffff;
 }
 
 .mern-subtitle {
   max-width: 900px;
   margin: 0 auto 50px;
-  text-align: center;
-  font-size: 1.15rem;
-  line-height: 1.8;
+  font-size: 1.12rem;
+  line-height: 1.9;
+  color: #dbeafe;
 }
 
 .mern-content {
-  max-width: 1150px;
-  margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(2, minmax(300px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  gap: 28px;
+  margin-top: 35px;
 }
 
 .mern-card {
-  background: rgba(15, 23, 42, 0.45);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-radius: 24px;
+  background: rgba(10, 18, 34, 0.58);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 22px;
   padding: 30px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  text-align: left;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+  transition: transform 0.3s ease, box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.mern-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.34);
+  border-color: rgba(72, 202, 228, 0.28);
 }
 
 .mern-card h3 {
-  font-size: 2rem;
-  margin-bottom: 20px;
+  color: #48cae4;
+  font-size: 1.45rem;
+  margin-bottom: 18px;
+  font-weight: 700;
 }
 
 .mern-card ul {
   margin: 0;
-  padding-left: 24px;
+  padding-left: 22px;
 }
 
 .mern-card li {
-  margin-bottom: 16px;
-  line-height: 1.7;
-  font-size: 1.2rem;
+  margin-bottom: 12px;
+  color: #edf4ff;
+  line-height: 1.75;
+  font-size: 1rem;
 }
 
-@media (max-width: 900px) {
+
+.mern-overlay .back-btn,
+.mern-overlay .back-button,
+.mern-overlay .back-to-services {
+  display: inline-flex;
+  margin-bottom: 26px;
+}
+
+
+@media (max-width: 992px) {
+  .mern {
+    padding: 130px 6% 70px;
+  }
+
   .mern-title {
-    font-size: 2.5rem;
+    font-size: 2.7rem;
+  }
+
+  .mern-subtitle {
+    font-size: 1.02rem;
+    margin-bottom: 40px;
   }
 
   .mern-content {
     grid-template-columns: 1fr;
+    gap: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mern {
+    padding: 110px 5% 60px;
+    align-items: flex-start;
+  }
+
+  .mern-title {
+    font-size: 2.2rem;
+    margin-top: 8px;
+  }
+
+  .mern-subtitle {
+    font-size: 0.98rem;
+    line-height: 1.8;
+    margin-bottom: 32px;
+  }
+
+  .mern-card {
+    padding: 24px 20px;
+    border-radius: 18px;
   }
 
   .mern-card h3 {
-    font-size: 1.6rem;
+    font-size: 1.25rem;
   }
 
   .mern-card li {
-    font-size: 1rem;
+    font-size: 0.96rem;
   }
 }

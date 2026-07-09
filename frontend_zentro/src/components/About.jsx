@@ -1,64 +1,122 @@
+import { useEffect, useRef, useState } from "react";
 import "./About.css";
 import Team from "./Team";
 import Mission from "./Mission";
 
+const Counter = ({ end, suffix = "" }) => {
+  const [count, setCount] = useState(0);
+  const counterRef = useRef(null);
+  const startedRef = useRef(false);
+
+  useEffect(() => {
+    const node = counterRef.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting || startedRef.current) return;
+        startedRef.current = true;
+
+        let start = 0;
+        const duration = 1800;
+        const increment = end / (duration / 16);
+
+        const updateCounter = () => {
+          start += increment;
+
+          if (start >= end) {
+            setCount(end);
+            return;
+          }
+
+          setCount(Math.floor(start));
+          requestAnimationFrame(updateCounter);
+        };
+
+        requestAnimationFrame(updateCounter);
+      },
+      { threshold: 0.4 }
+    );
+
+    observer.observe(node);
+
+    return () => observer.disconnect();
+  }, [end]);
+
+  return (
+    <h4 ref={counterRef}>
+      {count}
+      {suffix}
+    </h4>
+  );
+};
+
 const About = () => {
   return (
     <>
-      <section className="about">
+      <section className="about" id="about">
+        {/* background glow */}
+        <div className="about-glow about-glow-1"></div>
+        <div className="about-glow about-glow-2"></div>
+
         <div className="about-overlay">
           <h2 className="about-title">About Us</h2>
 
           <p className="about-subtitle">
-            Zentro is a technology-driven company providing modern web solutions
-            and industry-focused courses to help businesses grow and individuals
-            build strong technical skills.
+            Zentro is a technology-driven company delivering modern web
+            solutions and industry-focused courses that help businesses grow and
+            individuals build practical, job-ready technical skills.
           </p>
 
           <div className="about-grid">
             <div className="about-card">
+            
               <h3>Who We Are</h3>
               <p>
-                We are a passionate team of developers, designers, and technical
-                mentors specializing in full-stack development, UI/UX design,
-                IT support, and practical tech training.
+                We are a passionate team of developers, designers, and mentors
+                focused on creating impactful digital products and practical
+                learning experiences.
               </p>
             </div>
 
             <div className="about-card">
+             
               <h3>What We Do</h3>
               <p>
-                We build reliable websites, web applications, and digital
-                solutions for businesses while also offering courses and
-                training programs in development, design, databases, and
-                technical skills for students and professionals.
+                We build websites, web applications, UI/UX systems, and digital
+                solutions for businesses, while also offering courses and
+                technical training for students and professionals.
               </p>
             </div>
 
             <div className="about-card">
+              
               <h3>Why Choose Us</h3>
               <p>
-                We combine real-world project expertise with quality learning
-                experiences, helping clients get scalable digital solutions and
-                learners gain practical skills that matter in today’s tech
-                industry.
+                We combine real project expertise with high-quality learning,
+                helping businesses get scalable solutions and learners gain
+                skills that matter in the modern tech industry.
               </p>
             </div>
           </div>
 
           <div className="about-stats">
-            <div>
-              <h4>50+</h4>
-              <span>Projects</span>
+            <div className="stat-card">
+              <Counter end={50} suffix="+" />
+              <span>Projects Delivered</span>
             </div>
-            <div>
-              <h4>20+</h4>
-              <span>Technologies</span>
+
+            <div className="stat-card">
+              <Counter end={20} suffix="+" />
+              <span>Technologies Covered</span>
             </div>
-            <div>
-              <h4>100%</h4>
+
+            <div className="stat-card">
+              <Counter end={100} suffix="%" />
               <span>Client Satisfaction</span>
             </div>
+
+            
           </div>
         </div>
       </section>

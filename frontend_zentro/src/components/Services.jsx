@@ -1,7 +1,6 @@
 import "./Services.css";
 import { useNavigate } from "react-router-dom";
 
-
 const Services = () => {
   const navigate = useNavigate();
 
@@ -14,7 +13,6 @@ const Services = () => {
     { name: "UI / UX Designing", route: "/services/uiux" },
     { name: "SQL & Database Management", route: "/services/sql" },
     { name: "DSA", route: "/services/dsa" },
-  
   ];
 
   const hardwareServices = [
@@ -26,9 +24,7 @@ const Services = () => {
 
   return (
     <section className="services">
-    
-
-      <h2>Our Services and Courses</h2>
+      <h2>Our Services</h2>
 
       <div className="service-section">
         <h3 className="service-heading">Software Solutions</h3>

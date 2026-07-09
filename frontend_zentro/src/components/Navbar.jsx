@@ -15,7 +15,7 @@ const Navbar = () => {
     { name: "Home", id: "home" },
     { name: "Services", id: "services" },
     { name: "About", id: "about" },
-    { name: "Contact", id: "footer" },
+    { name: "Contact", id: "footer" }, 
   ];
 
   const moveUnderline = (id) => {
@@ -31,7 +31,6 @@ const Navbar = () => {
     }
   };
 
-
   useEffect(() => {
     if (location.pathname.startsWith("/services")) {
       setActive("services");
@@ -44,11 +43,14 @@ const Navbar = () => {
       setActive(target);
 
       setTimeout(() => {
+        const el = document.getElementById(target);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
         moveUnderline(target);
       }, 120);
     }
   }, [location]);
-
 
   useEffect(() => {
     if (location.pathname !== "/") return;
@@ -57,12 +59,11 @@ const Navbar = () => {
       { id: "home", el: document.getElementById("home") },
       { id: "services", el: document.getElementById("services") },
       { id: "about", el: document.getElementById("about") },
-      { id: "contact", el: document.getElementById("contact") },
+      { id: "footer", el: document.getElementById("footer") }, 
     ];
 
     const handleScroll = () => {
       const scrollPos = window.scrollY + 140;
-
       let current = "home";
 
       for (const section of sections) {
@@ -99,15 +100,23 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleResize);
     };
-  }, [location.pathname]);
+  }, [location.pathname, active]);
 
   const handleMenuClick = (id) => {
     setActive(id);
     setOpen(false);
 
-    navigate("/", {
-      state: { scrollTo: id },
-    });
+    if (location.pathname !== "/") {
+      navigate("/", {
+        state: { scrollTo: id },
+      });
+      return;
+    }
+
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
 
     setTimeout(() => moveUnderline(id), 120);
   };

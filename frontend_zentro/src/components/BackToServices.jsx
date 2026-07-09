@@ -9,7 +9,7 @@ const BackToServices = () => {
       className="back-to-services"
       onClick={() => navigate("/", { state: { scrollTo: "services" } })}
     >
-      ← Back to Services
+      ←
     </button>
   );
 };

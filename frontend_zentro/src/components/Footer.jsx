@@ -10,11 +10,9 @@ const Footer = () => {
   };
 
   return (
-    <footer className="footer">
+    <footer id="footer" className="footer">
       <div className="footer-container">
         <div className="footer-grid">
-
-      
           <div className="footer-brand">
             <img src={zentroLogo} alt="Zentro" className="footer-logo" />
             <p>
@@ -22,18 +20,16 @@ const Footer = () => {
             </p>
           </div>
 
-         
           <div>
             <h4 className="footer-heading">Quick Links</h4>
             <ul className="footer-links">
               <li onClick={() => scrollToSection("home")}>Home</li>
               <li onClick={() => scrollToSection("services")}>Services</li>
               <li onClick={() => scrollToSection("about")}>About</li>
-              <li onClick={() => scrollToSection("contact")}>Contact</li>
+              <li onClick={() => scrollToSection("footer")}>Contact</li>
             </ul>
           </div>
 
-          
           <div>
             <h4 className="footer-heading">Contact</h4>
             <ul className="footer-contact">
@@ -53,10 +49,8 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-
         </div>
 
-       
         <div className="footer-bottom">
           © {new Date().getFullYear()} Zentro. All rights reserved.
         </div>

@@ -1,41 +1,33 @@
-import { useNavigate } from "react-router-dom";
-import "./MernService.css"; 
+import "./MernService.css";
 import BackToServices from "../components/BackToServices";
-import GradientBlinds from "../components/GradientBlinds";
-
+import Plasma from "../components/Plasma";
 
 const UiUxService = () => {
-  const navigate = useNavigate();
-
   return (
     <section className="mern">
+      {/* Background */}
+      <div className="mern-bg">
+        <Plasma
+          color="#48cae4"
+          speed={1}
+          direction="forward"
+          scale={1}
+          opacity={1}
+          mouseInteractive={false}
+        />
+      </div>
 
-        <GradientBlinds
-                  gradientColors={["#00c6ff", "#0072ff"]}
-                  angle={20}
-                  noise={0.15}
-                  blindCount={16}
-                  blindMinWidth={60}
-                  spotlightRadius={0.45}
-                  spotlightSoftness={1.2}
-                  spotlightOpacity={1.1}
-                  mouseDampening={0.08}
-                  distortAmount={2.2}
-                  shineDirection="left"
-                  mixBlendMode="lighten"
-                />
-  
+      {/* Content */}
       <div className="mern-overlay">
-         <BackToServices />
-      <h1 className="mern-title">UI / UX Designing</h1>
+        <BackToServices />
 
-      
+        <h1 className="mern-title">UI / UX Designing</h1>
+
         <p className="mern-subtitle">
           Crafting intuitive and engaging user experiences with modern design
           principles for web and mobile applications.
         </p>
 
-     
         <div className="mern-content">
           <div className="mern-card">
             <h3>What We Build</h3>
@@ -64,4 +56,4 @@ const UiUxService = () => {
   );
 };
 
-export default UiUxService; 
+export default UiUxService;

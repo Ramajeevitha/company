@@ -1,30 +1,34 @@
 import React from "react";
 import "../components/Hero.css";
 import zentroLogo from "../assets/zentro.png";
-import ScrambledText from './ScrambledText';
 
 const Hero = () => {
-  const scrollToServices = () => {
-    document.getElementById("services")?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  };
-
   return (
-    <section className="hero">
-     
+    <section className="hero" id="home">
+      <div className="hero-bg-glow hero-glow-1"></div>
+      <div className="hero-bg-glow hero-glow-2"></div>
 
-      <img src={zentroLogo} alt="Hero Logo" className="hero-image" />
+      <div className="hero-container">
+        <div className="hero-image-wrap">
+          <img src={zentroLogo} alt="Zentro" className="hero-image" />
+        </div>
       
-      <h1>Transform Ideas Into Reality</h1>
-      <p>
-        Web & Mobile Apps • Cloud Solutions • AI & ML • UI/UX Innovation • IoT • DevOps
-      </p>
+        <div className="hero-content">
+          <h1 className="hero-title">
+            Build Powerful <span>Web Solutions</span> <br />
+            and Learn with <span>Zentro</span>
+          </h1>
 
-      <button onClick={scrollToServices}>
-        Let’s Build Together
-      </button>
+          <p className="hero-subtitle">
+            We help businesses grow with modern websites, mobile apps, UI/UX,
+            backend systems, cloud-ready solutions, and practical tech courses
+            designed for students, freshers, and teams.
+          </p>
+        </div>
+
+      
+        
+      </div>
     </section>
   );
 };

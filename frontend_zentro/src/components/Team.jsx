@@ -6,8 +6,8 @@ const Team = () => {
       <div className="team-overlay">
         <h2 className="team-title">Our Team</h2>
         <p className="team-subtitle">
-          A skilled team dedicated to delivering modern web solutions, technical
-          training, and reliable digital support.
+          A skilled team dedicated to delivering modern web solutions,
+          technical training, and reliable digital support.
         </p>
 
         <div className="team-grid">

@@ -1,24 +1,18 @@
 import "../pages/MernService.css";
 import BackToServices from "../components/BackToServices";
-import GradientBlinds from "../components/GradientBlinds";
+import Plasma from "../components/Plasma";
 
 const BackendService = () => {
   return (
     <section className="mern">
       <div className="mern-bg">
-        <GradientBlinds
-          gradientColors={["#00c6ff", "#0072ff"]}
-          angle={20}
-          noise={0.15}
-          blindCount={16}
-          blindMinWidth={60}
-          spotlightRadius={0.45}
-          spotlightSoftness={1.2}
-          spotlightOpacity={1.1}
-          mouseDampening={0.08}
-          distortAmount={2.2}
-          shineDirection="left"
-          mixBlendMode="lighten"
+        <Plasma
+          color="#48cae4"
+          speed={1}
+          direction="forward"
+          scale={1}
+          opacity={1}
+          mouseInteractive={false}
         />
       </div>
 

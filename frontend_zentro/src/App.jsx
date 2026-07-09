@@ -12,7 +12,10 @@ import Services from "./components/Services";
 import About from "./components/About";
 import Footer from "./components/Footer";
 
-/* Pages */
+
+import Plasma from "./components/Plasma";
+
+
 import MernService from "./pages/MernService";
 import PernService from "./pages/PernService";
 import FrontendService from "./pages/FrontendService";
@@ -39,11 +42,10 @@ const ScrollHandler = () => {
           el.scrollIntoView({ behavior: "smooth", block: "start" });
         }
 
-        // clear state
         window.history.replaceState(
           {},
           document.title,
-          window.location.pathname,
+          window.location.pathname
         );
       }, 120);
     }
@@ -51,6 +53,70 @@ const ScrollHandler = () => {
 
   return null;
 };
+
+function AppContent() {
+  return (
+    <div className="app-shell">
+    
+      <div className="global-bg">
+        <Plasma
+          color="#48cae4"
+          speed={1}
+          direction="forward"
+          scale={1}
+          opacity={1}
+          mouseInteractive={false}
+        />
+      </div>
+
+  
+      <div className="page-content">
+        <ScrollHandler />
+        <Navbar />
+
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <section id="home">
+                  <Hero />
+                </section>
+
+                <section id="services">
+                  <Services />
+                </section>
+
+                <section id="about">
+                  <About />
+                </section>
+
+                <section id="contact">
+                  <Footer />
+                </section>
+              </>
+            }
+          />
+
+      
+          <Route path="/services/mern-stack" element={<MernService />} />
+          <Route path="/services/pern-stack" element={<PernService />} />
+          <Route path="/services/frontend" element={<FrontendService />} />
+          <Route path="/services/backend" element={<BackendService />} />
+          <Route path="/services/django" element={<DjangoService />} />
+          <Route path="/services/uiux" element={<UiUxService />} />
+          <Route path="/services/sql" element={<SqlService />} />
+          <Route path="/services/dsa" element={<Dsa />} />
+
+          <Route path="/services/tech-support" element={<TechnicalSupport />} />
+          <Route path="/services/desktop-support" element={<DesktopSupport />} />
+          <Route path="/services/pcb" element={<PCBService />} />
+          <Route path="/services/iot" element={<IoTService />} />
+        </Routes>
+      </div>
+    </div>
+  );
+}
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -69,50 +135,7 @@ function App() {
 
   return (
     <Router>
-      <ScrollHandler />
-      <Navbar />
-
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <div id="home">
-                <Hero />
-              </div>
-
-              <div id="services">
-                <Services />
-              </div>
-
-              <div id="about">
-                <About />
-              </div>
-
-
-              <div id="footer">
-                <Footer />
-              </div>
-            </>
-          }
-        />
-
-        {/* Software Services */}
-        <Route path="/services/mern-stack" element={<MernService />} />
-        <Route path="/services/pern-stack" element={<PernService />} />
-        <Route path="/services/frontend" element={<FrontendService />} />
-        <Route path="/services/backend" element={<BackendService />} />
-        <Route path="/services/django" element={<DjangoService />} />
-        <Route path="/services/uiux" element={<UiUxService />} />
-        <Route path="/services/sql" element={<SqlService />} />
-        <Route path="/services/dsa" element={<Dsa />} />
-
-        {/* Hardware Services */}
-        <Route path="/services/tech-support" element={<TechnicalSupport />} />
-        <Route path="/services/desktop-support" element={<DesktopSupport />} />
-        <Route path="/services/pcb" element={<PCBService />} />
-        <Route path="/services/iot" element={<IoTService />} />
-      </Routes>
+      <AppContent />
     </Router>
   );
 }
