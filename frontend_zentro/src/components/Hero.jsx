@@ -1,6 +1,7 @@
 import React from "react";
 import "../components/Hero.css";
 import zentroLogo from "../assets/zentro.png";
+import ScrambledText from './ScrambledText';
 
 const Hero = () => {
   const scrollToServices = () => {
@@ -15,7 +16,7 @@ const Hero = () => {
      
 
       <img src={zentroLogo} alt="Hero Logo" className="hero-image" />
-
+      
       <h1>Transform Ideas Into Reality</h1>
       <p>
         Web & Mobile Apps • Cloud Solutions • AI & ML • UI/UX Innovation • IoT • DevOps

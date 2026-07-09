@@ -31,7 +31,7 @@ const Navbar = () => {
     }
   };
 
-  // route based active item
+
   useEffect(() => {
     if (location.pathname.startsWith("/services")) {
       setActive("services");
@@ -49,7 +49,7 @@ const Navbar = () => {
     }
   }, [location]);
 
-  // scroll spy for home page sections
+
   useEffect(() => {
     if (location.pathname !== "/") return;
 
