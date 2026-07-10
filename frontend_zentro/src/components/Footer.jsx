@@ -26,7 +26,7 @@ const Footer = () => {
               <li onClick={() => scrollToSection("home")}>Home</li>
               <li onClick={() => scrollToSection("services")}>Services</li>
               <li onClick={() => scrollToSection("about")}>About</li>
-              <li onClick={() => scrollToSection("footer")}>Contact</li>
+              
             </ul>
           </div>
 
