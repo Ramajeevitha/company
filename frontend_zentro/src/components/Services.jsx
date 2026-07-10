@@ -4,55 +4,47 @@ import { useNavigate } from "react-router-dom";
 const Services = () => {
   const navigate = useNavigate();
 
-  const softwareServices = [
-    { name: "MERN Stack Development", route: "/services/mern-stack" },
-    { name: "PERN Stack Development", route: "/services/pern-stack" },
-    { name: "Frontend Development", route: "/services/frontend" },
-    { name: "Backend Development", route: "/services/backend" },
-    { name: "Django", route: "/services/django" },
-    { name: "UI / UX Designing", route: "/services/uiux" },
-    { name: "SQL & Database Management", route: "/services/sql" },
-    { name: "DSA", route: "/services/dsa" },
-  ];
-
-  const hardwareServices = [
-    { name: "Technical Support", route: "/services/tech-support" },
-    { name: "Desktop Support", route: "/services/desktop-support" },
-    { name: "PCB Designing", route: "/services/pcb" },
-    { name: "IoT Projects", route: "/services/iot" },
-  ];
-
   return (
-    <section className="services">
-      <h2>Our Services & Courses</h2>
+    <section className="landing-services" id="services">
+      <div className="landing-services-overlay">
+        <h2 className="landing-services-title">What We Offer</h2>
+        <p className="landing-services-subtitle">
+          Explore our professional services and industry-focused courses
+          designed for businesses, students, and tech learners.
+        </p>
 
-      <div className="service-section">
-        <h3 className="service-heading">Software Solutions</h3>
-        <div className="service-grid">
-          {softwareServices.map((service, index) => (
-            <div
-              key={index}
-              className="service-card"
-              onClick={() => navigate(service.route)}
-            >
-              {service.name}
-            </div>
-          ))}
-        </div>
-      </div>
+        <div className="landing-services-grid">
+          {/* SERVICES CARD */}
+          <div className="landing-service-card">
+            <div className="landing-service-icon">💼</div>
+            <h3>Services</h3>
+            <p>
+              Discover our software and hardware solutions including web
+              development, UI/UX, backend systems, IoT, technical support, and
+              more.
+            </p>
+            <button onClick={() => navigate("/services")}>
+              Explore Services
+            </button>
+          </div>
 
-      <div className="service-section">
-        <h3 className="service-heading">Hardware Solutions</h3>
-        <div className="service-grid">
-          {hardwareServices.map((service, index) => (
-            <div
-              key={index}
-              className="service-card"
-              onClick={() => navigate(service.route)}
+          {/* COURSES CARD */}
+          <div className="landing-service-card">
+            <div className="landing-service-icon">📘</div>
+            <h3>Courses</h3>
+            <p>
+              Learn practical skills through our hands-on courses in web
+              development, databases, UI/UX, DSA, and modern software tools.
+            </p>
+            <button
+              onClick={() => {
+                navigate("/courses");
+                window.scrollTo(0, 0);
+              }}
             >
-              {service.name}
-            </div>
-          ))}
+              Explore Courses
+            </button>
+          </div>
         </div>
       </div>
     </section>

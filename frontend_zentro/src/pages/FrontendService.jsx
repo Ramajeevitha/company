@@ -1,53 +1,96 @@
-import { useNavigate } from "react-router-dom";
 import "./MernService.css";
 import BackToServices from "../components/BackToServices";
 import Plasma from "../components/Plasma";
+import { useNavigate } from "react-router-dom";
 
 const FrontendService = () => {
   const navigate = useNavigate();
 
   return (
     <section className="mern">
-       <div className="mern-bg">
-              <Plasma
-                color="#48cae4"
-                speed={1}
-                direction="forward"
-                scale={1}
-                opacity={1}
-                mouseInteractive={false}
-              />
-            </div>
+      <div className="mern-bg">
+        <Plasma
+          color="#48cae4"
+          speed={1}
+          direction="forward"
+          scale={1}
+          opacity={1}
+          mouseInteractive={false}
+        />
+      </div>
 
       <div className="mern-overlay">
-        <BackToServices />
+        <div className="mern-back-wrap">
+          <BackToServices to="/services/software" />
+        </div>
+
         <h1 className="mern-title">Frontend Development</h1>
+
         <p className="mern-subtitle">
-          Crafting visually stunning and responsive web interfaces that enhance
-          user experience and engagement.
+          We create visually impressive, responsive, and user-friendly website
+          interfaces that make your brand look modern and keep visitors engaged.
         </p>
 
         <div className="mern-content">
           <div className="mern-card">
-            <h3>What We Build</h3>
+            <h3>What We Create</h3>
             <ul>
-              <li>Responsive Web Pages & Websites</li>
-              <li>Single Page Applications (SPA)</li>
-              <li>Interactive UI Components</li>
-              <li>Landing Pages & Marketing Sites</li>
-              <li>Performance Optimized Interfaces</li>
+              <li>Modern website pages with clean and attractive layouts</li>
+              <li>Responsive designs for mobile, tablet, and desktop</li>
+              <li>Landing pages that turn visitors into customers</li>
+              <li>Interactive sections for better user engagement</li>
+              <li>Fast-loading pages for smooth browsing experience</li>
             </ul>
           </div>
 
           <div className="mern-card">
-            <h3>Our Frontend Tech Stack</h3>
+            <h3>Why Choose Our Frontend Service</h3>
             <ul>
-              <li>HTML5</li>
-              <li>CSS3</li>
-              <li>JavaScript (ES6+)</li>
-              <li>React.js – Frontend Library</li>
+              <li>Beautiful and professional design that reflects your brand</li>
+              <li>Mobile-friendly layouts built for today’s users</li>
+              <li>Easy-to-use interfaces that improve customer experience</li>
+              <li>Clean page structure focused on readability and conversion</li>
+              <li>Perfect for business websites, portfolios, and service pages</li>
             </ul>
           </div>
+        </div>
+
+        <div className="mern-contact-box">
+          <h3>Ready to Build a Stunning Website Interface?</h3>
+          <p>
+            Whether you need a landing page, business website, portfolio, or a
+            complete modern frontend experience, we’re here to create something
+            that looks premium and performs beautifully.
+          </p>
+
+          <button
+            onClick={() => navigate("/", { state: { scrollTo: "contact" } })}
+            style={{
+              padding: "14px 28px",
+              border: "none",
+              borderRadius: "999px",
+              background: "linear-gradient(135deg, #48cae4, #7b61ff)",
+              color: "#fff",
+              fontSize: "1rem",
+              fontWeight: "700",
+              cursor: "pointer",
+              marginTop: "20px",
+              boxShadow: "0 12px 26px rgba(72, 202, 228, 0.24)",
+              transition: "all 0.28s ease",
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.transform = "translateY(-2px) scale(1.02)";
+              e.target.style.boxShadow =
+                "0 18px 34px rgba(72, 202, 228, 0.32)";
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.transform = "translateY(0) scale(1)";
+              e.target.style.boxShadow =
+                "0 12px 26px rgba(72, 202, 228, 0.24)";
+            }}
+          >
+            Contact Us
+          </button>
         </div>
       </div>
     </section>

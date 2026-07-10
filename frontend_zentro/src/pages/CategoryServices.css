@@ -1,0 +1,208 @@
+.category-services {
+  min-height: 100vh;
+  padding: 96px 8% 80px; /* keeps content just below navbar */
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+/* ===== top row for back button ===== */
+.page-top-row {
+  max-width: 1280px;
+  margin: 0 auto 18px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* ===== main layout ===== */
+.category-layout {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+/* ===== sidebar ===== */
+.category-sidebar {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0.03)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 28px;
+  padding: 28px 22px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 96px;
+}
+
+.category-sidebar h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 26px;
+  color: #fff;
+  position: relative;
+  text-align: center;
+}
+
+.category-sidebar h2::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 3px;
+  margin: 12px auto 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #48cae4, #7b61ff);
+}
+
+.category-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.category-sidebar li {
+  padding: 16px 18px;
+  border-radius: 16px;
+  cursor: pointer;
+  color: #dbeafe;
+  font-size: 1.02rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  transition: all 0.28s ease;
+  border: 1px solid transparent;
+}
+
+.category-sidebar li:hover {
+  background: rgba(72, 202, 228, 0.14);
+  color: #fff;
+  transform: translateX(4px);
+  border-color: rgba(72, 202, 228, 0.18);
+}
+
+.category-sidebar li.active {
+  background: linear-gradient(
+    135deg,
+    rgba(72, 202, 228, 0.2),
+    rgba(123, 97, 255, 0.16)
+  );
+  color: #fff;
+  border: 1px solid rgba(72, 202, 228, 0.2);
+  box-shadow: 0 10px 24px rgba(72, 202, 228, 0.14);
+}
+
+
+.category-content {
+  min-height: 560px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.025)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 30px;
+  padding: 44px 42px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.category-content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top right, rgba(72, 202, 228, 0.12), transparent 32%),
+    radial-gradient(circle at bottom left, rgba(123, 97, 255, 0.1), transparent 35%);
+  pointer-events: none;
+}
+
+.category-content h1 {
+  position: relative;
+  z-index: 2;
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-weight: 800;
+  margin-bottom: 18px;
+  color: #fff;
+  line-height: 1.1;
+}
+
+.category-content p {
+  position: relative;
+  z-index: 2;
+  font-size: 1.08rem;
+  color: #dbeafe;
+  line-height: 1.9;
+  max-width: 720px;
+}
+
+/* ===== responsive ===== */
+@media (max-width: 1024px) {
+  .category-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .category-sidebar {
+    position: relative;
+    top: unset;
+  }
+
+  .category-content {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .category-services {
+    padding: 84px 6% 70px;
+  }
+
+  .page-top-row {
+    margin-bottom: 16px;
+  }
+
+  .category-layout {
+    gap: 22px;
+  }
+
+  .category-sidebar {
+    padding: 22px 18px;
+    border-radius: 22px;
+  }
+
+  .category-sidebar h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .category-sidebar h2::after {
+    width: 90px;
+  }
+
+  .category-sidebar li {
+    padding: 14px 14px;
+    font-size: 0.96rem;
+    margin-bottom: 10px;
+  }
+
+  .category-content {
+    padding: 30px 22px;
+    border-radius: 22px;
+  }
+
+  .category-content h1 {
+    font-size: 2rem;
+  }
+
+  .category-content p {
+    font-size: 0.98rem;
+    line-height: 1.8;
+  }
+}

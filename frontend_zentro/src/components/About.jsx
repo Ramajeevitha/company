@@ -55,7 +55,6 @@ const About = () => {
   return (
     <>
       <section className="about" id="about">
-        {/* background glow */}
         <div className="about-glow about-glow-1"></div>
         <div className="about-glow about-glow-2"></div>
 
@@ -70,7 +69,6 @@ const About = () => {
 
           <div className="about-grid">
             <div className="about-card">
-            
               <h3>Who We Are</h3>
               <p>
                 We are a passionate team of developers, designers, and mentors
@@ -80,29 +78,28 @@ const About = () => {
             </div>
 
             <div className="about-card">
-             
               <h3>What We Do</h3>
               <p>
-                We build websites, web applications, UI/UX systems, and digital
-                solutions for businesses, while also offering courses and
-                technical training for students and professionals.
+                We build websites, web applications, UI/UX systems, digital
+                solutions, and provide industry-focused training programs in
+                Software and Hardware technologies.
               </p>
             </div>
 
             <div className="about-card">
-              
               <h3>Why Choose Us</h3>
               <p>
                 We combine real project expertise with high-quality learning,
                 helping businesses get scalable solutions and learners gain
-                skills that matter in the modern tech industry.
+                practical skills that matter in today's technology industry.
               </p>
             </div>
           </div>
 
+          {/* Statistics */}
           <div className="about-stats">
             <div className="stat-card">
-              <Counter end={50} suffix="+" />
+              <Counter end={30} suffix="+" />
               <span>Projects Delivered</span>
             </div>
 
@@ -115,8 +112,28 @@ const About = () => {
               <Counter end={100} suffix="%" />
               <span>Client Satisfaction</span>
             </div>
+          </div>
 
-            
+          {/* MSME Card */}
+          <div className="msme-card">
+            <div className="msme-badge">
+              <span>Government of India</span>
+            </div>
+
+            <h3>MSME Registered Company</h3>
+
+            <p>
+              Zentro is officially registered under the Ministry of Micro,
+              Small and Medium Enterprises (MSME), Government of India. Our
+              registration reflects our commitment to delivering trusted,
+              professional, and high-quality technology solutions and training
+              services.
+            </p>
+
+            <div className="msme-number">
+              <strong>Udyam Registration No.</strong>
+              <span>UDYAM-TN-26-0097136</span>
+            </div>
           </div>
         </div>
       </section>

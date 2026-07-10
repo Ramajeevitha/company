@@ -47,6 +47,11 @@ const Footer = () => {
                   LinkedIn
                 </a>
               </li>
+              <li>
+                <a href="https://www.instagram.com/_zentro_tech_?igsh=YzdrbG5zMjFldmQ5">
+                  Instagram
+                </a>
+              </li>
             </ul>
           </div>
         </div>

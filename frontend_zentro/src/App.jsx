@@ -11,23 +11,25 @@ import Hero from "./components/Hero";
 import Services from "./components/Services";
 import About from "./components/About";
 import Footer from "./components/Footer";
-
+import ServicesPage from "./pages/ServicesPage";
+import CoursesPage from "./pages/CoursesPage";
+import SoftwareServices from "./pages/SoftwareServices";
+import HardwareServices from "./pages/HardwareServices";
 
 import Plasma from "./components/Plasma";
 
-
 import MernService from "./pages/MernService";
-import PernService from "./pages/PernService";
+
 import FrontendService from "./pages/FrontendService";
 import BackendService from "./pages/BackendService";
-import DjangoService from "./pages/DjangoService";
+
 import UiUxService from "./pages/UiUxService";
 import SqlService from "./pages/SqlService";
-import Dsa from "./pages/Dsa";
 import TechnicalSupport from "./pages/TechnicalSupport";
 import DesktopSupport from "./pages/DesktopSupport";
 import PCBService from "./pages/PCBService";
 import IoTService from "./pages/IoTService";
+import LogoPosterService from "./pages/LogoPosterService";
 
 const ScrollHandler = () => {
   const location = useLocation();
@@ -45,7 +47,7 @@ const ScrollHandler = () => {
         window.history.replaceState(
           {},
           document.title,
-          window.location.pathname
+          window.location.pathname,
         );
       }, 120);
     }
@@ -57,7 +59,6 @@ const ScrollHandler = () => {
 function AppContent() {
   return (
     <div className="app-shell">
-    
       <div className="global-bg">
         <Plasma
           color="#48cae4"
@@ -69,7 +70,6 @@ function AppContent() {
         />
       </div>
 
-  
       <div className="page-content">
         <ScrollHandler />
         <Navbar />
@@ -98,18 +98,26 @@ function AppContent() {
             }
           />
 
-      
           <Route path="/services/mern-stack" element={<MernService />} />
-          <Route path="/services/pern-stack" element={<PernService />} />
+         
           <Route path="/services/frontend" element={<FrontendService />} />
           <Route path="/services/backend" element={<BackendService />} />
-          <Route path="/services/django" element={<DjangoService />} />
+        
           <Route path="/services/uiux" element={<UiUxService />} />
           <Route path="/services/sql" element={<SqlService />} />
-          <Route path="/services/dsa" element={<Dsa />} />
+        
+
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/services/software" element={<SoftwareServices />} />
+          <Route path="/services/hardware" element={<HardwareServices />} />
+          <Route path="/courses" element={<CoursesPage />} />
+          <Route path="/services/logo-poster-design" element={<LogoPosterService />} />
 
           <Route path="/services/tech-support" element={<TechnicalSupport />} />
-          <Route path="/services/desktop-support" element={<DesktopSupport />} />
+          <Route
+            path="/services/desktop-support"
+            element={<DesktopSupport />}
+          />
           <Route path="/services/pcb" element={<PCBService />} />
           <Route path="/services/iot" element={<IoTService />} />
         </Routes>
