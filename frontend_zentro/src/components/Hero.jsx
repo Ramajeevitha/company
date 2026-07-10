@@ -12,22 +12,25 @@ const Hero = () => {
         <div className="hero-image-wrap">
           <img src={zentroLogo} alt="Zentro" className="hero-image" />
         </div>
-      
+
         <div className="hero-content">
+          <span className="hero-tag">
+            Software • Hardware • Training
+          </span>
+
           <h1 className="hero-title">
-            Build Powerful <span>Web Solutions</span> <br />
-            and Learn with <span>Zentro</span>
+            Smart <span>Software</span> &
+            <span> Hardware</span>
+            <br />
+            Solutions for Every Business
           </h1>
 
           <p className="hero-subtitle">
-            We help businesses grow with modern websites, mobile apps, UI/UX,
-            backend systems, cloud-ready solutions, and practical tech courses
-            designed for students, freshers, and teams.
+            We build modern software solutions, deliver reliable hardware
+            services, and provide practical training programs that prepare
+            students and professionals for real-world success.
           </p>
         </div>
-
-      
-        
       </div>
     </section>
   );
