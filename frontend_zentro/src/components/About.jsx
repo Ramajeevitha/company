@@ -62,7 +62,7 @@ const About = () => {
           <h2 className="about-title">About Us</h2>
 
           <p className="about-subtitle">
-            Zentro is a technology-driven company delivering modern web
+            Uyaron is a technology-driven company delivering modern web
             solutions and industry-focused courses that help businesses grow and
             individuals build practical, job-ready technical skills.
           </p>
@@ -123,7 +123,7 @@ const About = () => {
             <h3>MSME Registered Company</h3>
 
             <p>
-              Zentro is officially registered under the Ministry of Micro,
+              Uyaron is officially registered under the Ministry of Micro,
               Small and Medium Enterprises (MSME), Government of India. Our
               registration reflects our commitment to delivering trusted,
               professional, and high-quality technology solutions and training

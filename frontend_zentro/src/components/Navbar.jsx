@@ -15,7 +15,7 @@ const Navbar = () => {
     { name: "Home", id: "home" },
     { name: "Services", id: "services" },
     { name: "About", id: "about" },
-    { name: "Contact", id: "footer" }, 
+    { name: "Contact", id: "footer" },
   ];
 
   const moveUnderline = (id) => {
@@ -59,7 +59,7 @@ const Navbar = () => {
       { id: "home", el: document.getElementById("home") },
       { id: "services", el: document.getElementById("services") },
       { id: "about", el: document.getElementById("about") },
-      { id: "footer", el: document.getElementById("footer") }, 
+      { id: "footer", el: document.getElementById("footer") },
     ];
 
     const handleScroll = () => {
@@ -123,9 +123,11 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <h2 className="navbar-logo" onClick={() => handleMenuClick("home")}>
-        Zentro
-      </h2>
+      <div className="navbar-logo" onClick={() => handleMenuClick("home")}>
+        <img src="/assets/uyaron_logo.png" alt="Uyaron" className="logo-img" />
+
+        <span>Uyaron</span>
+      </div>
 
       <div
         className={`hamburger ${open ? "open" : ""}`}

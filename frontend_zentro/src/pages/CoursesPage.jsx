@@ -89,16 +89,7 @@ const CoursesPage = () => {
             career with hands-on training and expert guidance.
           </p>
 
-          <button
-            className="courses-contact-btn"
-            onClick={() =>
-              navigate("/", {
-                state: { scrollTo: "contact" },
-              })
-            }
-          >
-            Contact Us
-          </button>
+      
         </div>
       </div>
     </section>

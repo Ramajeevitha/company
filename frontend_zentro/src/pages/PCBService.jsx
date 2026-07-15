@@ -58,34 +58,7 @@ const PCBService = () => {
             design.
           </p>
 
-          <button
-            onClick={() => navigate("/", { state: { scrollTo: "contact" } })}
-            style={{
-              padding: "14px 28px",
-              border: "none",
-              borderRadius: "999px",
-              background: "linear-gradient(135deg, #48cae4, #7b61ff)",
-              color: "#fff",
-              fontSize: "1rem",
-              fontWeight: "700",
-              cursor: "pointer",
-              marginTop: "20px",
-              boxShadow: "0 12px 26px rgba(72, 202, 228, 0.24)",
-              transition: "all 0.28s ease",
-            }}
-            onMouseEnter={(e) => {
-              e.target.style.transform = "translateY(-2px) scale(1.02)";
-              e.target.style.boxShadow =
-                "0 18px 34px rgba(72, 202, 228, 0.32)";
-            }}
-            onMouseLeave={(e) => {
-              e.target.style.transform = "translateY(0) scale(1)";
-              e.target.style.boxShadow =
-                "0 12px 26px rgba(72, 202, 228, 0.24)";
-            }}
-          >
-            Contact Us
-          </button>
+         
         </div>
       </div>
     </section>

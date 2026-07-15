@@ -59,24 +59,7 @@ const LogoPosterService = () => {
             professional and attract attention.
           </p>
 
-          <button
-            onClick={() => navigate("/", { state: { scrollTo: "footer" } })}
-            style={{
-              padding: "14px 28px",
-              border: "none",
-              borderRadius: "999px",
-              background: "linear-gradient(135deg, #48cae4, #7b61ff)",
-              color: "#fff",
-              fontSize: "1rem",
-              fontWeight: "700",
-              cursor: "pointer",
-              marginTop: "20px",
-              boxShadow: "0 12px 26px rgba(72, 202, 228, 0.24)",
-              transition: "all 0.28s ease",
-            }}
-          >
-            Contact Us
-          </button>
+     
         </div>
       </div>
     </section>

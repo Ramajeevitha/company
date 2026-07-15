@@ -1,6 +1,5 @@
 import React from "react";
-import "../components/Hero.css";
-import zentroLogo from "../assets/zentro.png";
+import "./Hero.css";
 
 const Hero = () => {
   return (
@@ -9,26 +8,38 @@ const Hero = () => {
       <div className="hero-bg-glow hero-glow-2"></div>
 
       <div className="hero-container">
-        <div className="hero-image-wrap">
-          <img src={zentroLogo} alt="Zentro" className="hero-image" />
+        {/* Logo + Company */}
+        <div className="hero-top">
+          <div className="hero-logo">
+            <img src="/assets/uyaron_logo.png" alt="Uyaron Logo" />
+          </div>
+
+          <div className="hero-company">
+            <h2 className="company-name">
+              <span>Uyaron</span>
+            </h2>
+
+            <p className="company-tagline">
+              Building Technology. Empowering Tomorrow.
+            </p>
+
+            <span className="hero-tag">Software • Hardware • Training</span>
+          </div>
         </div>
 
-        <div className="hero-content">
-          <span className="hero-tag">
-            Software • Hardware • Training
-          </span>
+        {/* Main Content */}
 
+        <div className="hero-main">
           <h1 className="hero-title">
-            Smart <span>Software</span> &
-            <span> Hardware</span>
+            Smart <span>Software</span> & <span>Hardware</span>
             <br />
             Solutions for Every Business
           </h1>
 
           <p className="hero-subtitle">
-            We build modern software solutions, deliver reliable hardware
-            services, and provide practical training programs that prepare
-            students and professionals for real-world success.
+            We provide innovative software solutions, reliable hardware services
+            and industry-focused training that empower businesses, students and
+            professionals to achieve more.
           </p>
         </div>
       </div>
