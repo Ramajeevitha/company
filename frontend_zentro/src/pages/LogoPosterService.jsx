@@ -1,6 +1,6 @@
 import "./MernService.css";
 import BackToServices from "../components/BackToServices";
-import Plasma from "../components/Plasma";
+
 import { useNavigate } from "react-router-dom";
 
 const LogoPosterService = () => {
@@ -10,14 +10,7 @@ const LogoPosterService = () => {
     <section className="mern">
       {/* Background */}
       <div className="mern-bg">
-        <Plasma
-          color="#48cae4"
-          speed={1}
-          direction="forward"
-          scale={1}
-          opacity={1}
-          mouseInteractive={false}
-        />
+        
       </div>
 
       {/* Content */}

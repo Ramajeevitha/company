@@ -4,32 +4,35 @@ import {
   Route,
   useLocation,
 } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, lazy, Suspense } from "react";
 
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Services from "./components/Services";
 import About from "./components/About";
 import Footer from "./components/Footer";
-import ServicesPage from "./pages/ServicesPage";
-import CoursesPage from "./pages/CoursesPage";
-import SoftwareServices from "./pages/SoftwareServices";
-import HardwareServices from "./pages/HardwareServices";
 
-import Plasma from "./components/Plasma";
 
-import MernService from "./pages/MernService";
+/* Lazy Loaded Pages */
+const ServicesPage = lazy(() => import("./pages/ServicesPage"));
+const CoursesPage = lazy(() => import("./pages/CoursesPage"));
+const SoftwareServices = lazy(() => import("./pages/SoftwareServices"));
+const HardwareServices = lazy(() => import("./pages/HardwareServices"));
 
-import FrontendService from "./pages/FrontendService";
-import BackendService from "./pages/BackendService";
+const MernService = lazy(() => import("./pages/MernService"));
+const FrontendService = lazy(() => import("./pages/FrontendService"));
+const BackendService = lazy(() => import("./pages/BackendService"));
+const UiUxService = lazy(() => import("./pages/UiUxService"));
+const SqlService = lazy(() => import("./pages/SqlService"));
 
-import UiUxService from "./pages/UiUxService";
-import SqlService from "./pages/SqlService";
-import TechnicalSupport from "./pages/TechnicalSupport";
-import DesktopSupport from "./pages/DesktopSupport";
-import PCBService from "./pages/PCBService";
-import IoTService from "./pages/IoTService";
-import LogoPosterService from "./pages/LogoPosterService";
+const TechnicalSupport = lazy(() => import("./pages/TechnicalSupport"));
+const DesktopSupport = lazy(() => import("./pages/DesktopSupport"));
+const PCBService = lazy(() => import("./pages/PCBService"));
+const IoTService = lazy(() => import("./pages/IoTService"));
+
+const LogoPosterService = lazy(() =>
+  import("./pages/LogoPosterService")
+);
 
 const ScrollHandler = () => {
   const location = useLocation();
@@ -40,14 +43,18 @@ const ScrollHandler = () => {
 
       setTimeout(() => {
         const el = document.getElementById(targetId);
+
         if (el) {
-          el.scrollIntoView({ behavior: "smooth", block: "start" });
+          el.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
         }
 
         window.history.replaceState(
           {},
           document.title,
-          window.location.pathname,
+          window.location.pathname
         );
       }, 120);
     }
@@ -60,67 +67,104 @@ function AppContent() {
   return (
     <div className="app-shell">
       <div className="global-bg">
-        <Plasma
-          color="#48cae4"
-          speed={1}
-          direction="forward"
-          scale={1}
-          opacity={1}
-          mouseInteractive={false}
-        />
+       
       </div>
 
       <div className="page-content">
         <ScrollHandler />
         <Navbar />
 
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <section id="home">
-                  <Hero />
-                </section>
+        <Suspense
+          fallback={
+            <div
+              style={{
+                minHeight: "100vh",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                color: "#fff",
+                fontSize: "1.2rem",
+                background: "#070b14",
+              }}
+            >
+              Loading...
+            </div>
+          }
+        >
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <section id="home">
+                    <Hero />
+                  </section>
 
-                <section id="services">
-                  <Services />
-                </section>
+                  <section id="services">
+                    <Services />
+                  </section>
 
-                <section id="about">
-                  <About />
-                </section>
+                  <section id="about">
+                    <About />
+                  </section>
 
-                <section id="contact">
-                  <Footer />
-                </section>
-              </>
-            }
-          />
+                  <section id="contact">
+                    <Footer />
+                  </section>
+                </>
+              }
+            />
 
-          <Route path="/services/mern-stack" element={<MernService />} />
-         
-          <Route path="/services/frontend" element={<FrontendService />} />
-          <Route path="/services/backend" element={<BackendService />} />
-        
-          <Route path="/services/uiux" element={<UiUxService />} />
-          <Route path="/services/sql" element={<SqlService />} />
-        
+            {/* Services */}
+            <Route path="/services" element={<ServicesPage />} />
+            <Route
+              path="/services/software"
+              element={<SoftwareServices />}
+            />
+            <Route
+              path="/services/hardware"
+              element={<HardwareServices />}
+            />
 
-          <Route path="/services" element={<ServicesPage />} />
-          <Route path="/services/software" element={<SoftwareServices />} />
-          <Route path="/services/hardware" element={<HardwareServices />} />
-          <Route path="/courses" element={<CoursesPage />} />
-          <Route path="/services/logo-poster-design" element={<LogoPosterService />} />
+            {/* Courses */}
+            <Route path="/courses" element={<CoursesPage />} />
 
-          <Route path="/services/tech-support" element={<TechnicalSupport />} />
-          <Route
-            path="/services/desktop-support"
-            element={<DesktopSupport />}
-          />
-          <Route path="/services/pcb" element={<PCBService />} />
-          <Route path="/services/iot" element={<IoTService />} />
-        </Routes>
+            {/* Software Pages */}
+            <Route
+              path="/services/mern-stack"
+              element={<MernService />}
+            />
+            <Route
+              path="/services/frontend"
+              element={<FrontendService />}
+            />
+            <Route
+              path="/services/backend"
+              element={<BackendService />}
+            />
+            <Route
+              path="/services/uiux"
+              element={<UiUxService />}
+            />
+            <Route path="/services/sql" element={<SqlService />} />
+            <Route
+              path="/services/logo-poster-design"
+              element={<LogoPosterService />}
+            />
+
+            {/* Hardware Pages */}
+            <Route
+              path="/services/tech-support"
+              element={<TechnicalSupport />}
+            />
+            <Route
+              path="/services/desktop-support"
+              element={<DesktopSupport />}
+            />
+            <Route path="/services/pcb" element={<PCBService />} />
+            <Route path="/services/iot" element={<IoTService />} />
+          </Routes>
+        </Suspense>
       </div>
     </div>
   );
@@ -132,8 +176,11 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
+
       const loader = document.getElementById("page-loader");
-      if (loader) loader.style.display = "none";
+      if (loader) {
+        loader.style.display = "none";
+      }
     }, 700);
 
     return () => clearTimeout(timer);

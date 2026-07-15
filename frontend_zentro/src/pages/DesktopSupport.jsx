@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import "./MernService.css";
 import BackToServices from "../components/BackToServices";
-import Plasma from "../components/Plasma";
+
 
 const DesktopSupport = () => {
   const navigate = useNavigate();
@@ -9,14 +9,7 @@ const DesktopSupport = () => {
   return (
     <section className="mern">
       <div className="mern-bg">
-        <Plasma
-          color="#48cae4"
-          speed={1}
-          direction="forward"
-          scale={1}
-          opacity={1}
-          mouseInteractive={false}
-        />
+       
       </div>
 
       <div className="mern-overlay">
