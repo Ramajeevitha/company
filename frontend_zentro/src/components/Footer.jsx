@@ -15,7 +15,7 @@ const Footer = () => {
     <footer id="footer" className="footer">
       <div className="footer-container">
         <div className="footer-grid">
-          {/* Company */}
+      
           <div className="footer-brand">
             <img
               src="/assets/uyaron_logo.png"
@@ -30,7 +30,6 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Quick Links */}
           <div>
             <h4 className="footer-heading">Quick Links</h4>
 
@@ -41,7 +40,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact */}
+    
           <div>
             <h4 className="footer-heading">Contact</h4>
 

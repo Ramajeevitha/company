@@ -8,12 +8,12 @@ const LogoPosterService = () => {
 
   return (
     <section className="mern">
-      {/* Background */}
+  
       <div className="mern-bg">
         
       </div>
 
-      {/* Content */}
+
       <div className="mern-overlay">
         <div className="mern-back-wrap">
           <BackToServices to="/services/software" />

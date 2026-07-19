@@ -17,7 +17,7 @@
   align-items: stretch;
 }
 
-/* LEFT SIDEBAR */
+
 .category-sidebar {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -70,7 +70,7 @@
   font-weight: 600;
 }
 
-/* RIGHT SIDE PANEL */
+
 .category-content {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -115,7 +115,7 @@
   margin: 0 0 28px;
 }
 
-/* HIGHLIGHTS */
+
 .software-highlights {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -150,7 +150,7 @@
   flex-shrink: 0;
 }
 
-/* CONTACT BOX */
+
 .hardware-contact-box {
   margin-top: 10px;
   padding: 28px 30px;
@@ -214,7 +214,7 @@
   box-shadow: 0 18px 34px rgba(72, 202, 228, 0.32);
 }
 
-/* RESPONSIVE */
+
 @media (max-width: 1100px) {
   .category-layout {
     grid-template-columns: 1fr;

@@ -5,7 +5,7 @@ const ScrollToTop = () => {
   const { pathname, state } = useLocation();
 
   useEffect(() => {
-    // Don't interfere with Home page section scrolling
+  
     if (pathname === "/" && state?.scrollTo) return;
 
     window.scrollTo({

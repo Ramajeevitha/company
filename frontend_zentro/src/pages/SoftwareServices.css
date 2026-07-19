@@ -17,7 +17,7 @@
   align-items: stretch;
 }
 
-/* LEFT SIDEBAR */
+
 .category-sidebar {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -70,7 +70,7 @@
   font-weight: 600;
 }
 
-/* RIGHT SIDE - SINGLE PANEL */
+
 .category-content {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -115,7 +115,7 @@
   margin: 0 0 28px;
 }
 
-/* HIGHLIGHTS */
+
 .hardware-highlights {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -139,7 +139,6 @@
   margin-top: 2px;
 }
 
-/* NEROVOLT SECTION */
 .nerovolt-box {
   margin-top: 10px;
   padding: 24px 24px;
@@ -179,7 +178,7 @@
   color: #ffffff;
 }
 
-/* CTA BUTTON */
+
 .hardware-cta {
   display: inline-flex;
   align-items: center;

@@ -7,8 +7,9 @@ const softwareCourses = [
   "Backend Development",
   "UI / UX Design",
   "SQL & Database Management",
-  "DSA with JavaScript / Python / Java",
-  "Django Development",
+  "Languages : C, JavaScript, Java",
+  "DSA : JavaScript , Java",
+  
 ];
 
 const hardwareCourses = [
@@ -44,7 +45,7 @@ const CoursesPage = () => {
         </div>
 
         <div className="course-section">
-          {/* Software */}
+        
           <div className="course-column">
             <h2>💻 Software Courses</h2>
 
@@ -61,7 +62,6 @@ const CoursesPage = () => {
             </div>
           </div>
 
-          {/* Hardware */}
           <div className="course-column">
             <h2>⚙️ Hardware Courses</h2>
 
@@ -79,7 +79,7 @@ const CoursesPage = () => {
           </div>
         </div>
 
-        {/* Contact Section */}
+       
         <div className="courses-contact-box">
           <h3>Ready to Start Your Learning Journey?</h3>
 

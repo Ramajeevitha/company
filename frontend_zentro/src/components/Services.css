@@ -1,4 +1,4 @@
-/* ================= LANDING SERVICES SECTION ================= */
+
 .landing-services {
   position: relative;
   padding: 110px 8% 90px;
@@ -40,14 +40,14 @@
   color: #dbeafe;
 }
 
-/* ================= GRID ================= */
+
 .landing-services-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(280px, 1fr));
   gap: 28px;
 }
 
-/* ================= CARD ================= */
+
 .landing-service-card {
   position: relative;
   padding: 38px 30px;
@@ -128,7 +128,7 @@
   box-shadow: 0 14px 28px rgba(14, 165, 233, 0.3);
 }
 
-/* ================= RESPONSIVE ================= */
+
 @media (max-width: 900px) {
   .landing-services-grid {
     grid-template-columns: 1fr;

@@ -1,8 +1,4 @@
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useEffect, useState, lazy, Suspense } from "react";
 
 import Navbar from "./components/Navbar";
@@ -12,57 +8,34 @@ import About from "./components/About";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 
-/* Lazy Loaded Pages */
+
 const ServicesPage = lazy(() => import("./pages/ServicesPage"));
 const CoursesPage = lazy(() => import("./pages/CoursesPage"));
+const PlacementTraining = lazy(() => import("./pages/PlacementTraining"));
 
-const SoftwareServices = lazy(() =>
-  import("./pages/SoftwareServices")
-);
+const SoftwareServices = lazy(() => import("./pages/SoftwareServices"));
 
-const HardwareServices = lazy(() =>
-  import("./pages/HardwareServices")
-);
+const HardwareServices = lazy(() => import("./pages/HardwareServices"));
 
-const MernService = lazy(() =>
-  import("./pages/MernService")
-);
+const MernService = lazy(() => import("./pages/MernService"));
 
-const FrontendService = lazy(() =>
-  import("./pages/FrontendService")
-);
+const FrontendService = lazy(() => import("./pages/FrontendService"));
 
-const BackendService = lazy(() =>
-  import("./pages/BackendService")
-);
+const BackendService = lazy(() => import("./pages/BackendService"));
 
-const UiUxService = lazy(() =>
-  import("./pages/UiUxService")
-);
+const UiUxService = lazy(() => import("./pages/UiUxService"));
 
-const SqlService = lazy(() =>
-  import("./pages/SqlService")
-);
+const SqlService = lazy(() => import("./pages/SqlService"));
 
-const TechnicalSupport = lazy(() =>
-  import("./pages/TechnicalSupport")
-);
+const TechnicalSupport = lazy(() => import("./pages/TechnicalSupport"));
 
-const DesktopSupport = lazy(() =>
-  import("./pages/DesktopSupport")
-);
+const DesktopSupport = lazy(() => import("./pages/DesktopSupport"));
 
-const PCBService = lazy(() =>
-  import("./pages/PCBService")
-);
+const PCBService = lazy(() => import("./pages/PCBService"));
 
-const IoTService = lazy(() =>
-  import("./pages/IoTService")
-);
+const IoTService = lazy(() => import("./pages/IoTService"));
 
-const LogoPosterService = lazy(() =>
-  import("./pages/LogoPosterService")
-);
+const LogoPosterService = lazy(() => import("./pages/LogoPosterService"));
 
 function AppContent() {
   return (
@@ -70,10 +43,9 @@ function AppContent() {
       <div className="global-bg"></div>
 
       <div className="page-content">
-        {/* Handles page scrolling */}
+     
         <ScrollToTop />
 
-        {/* Navbar */}
         <Navbar />
 
         <Suspense
@@ -94,8 +66,7 @@ function AppContent() {
           }
         >
           <Routes>
-
-            {/* ================= HOME ================= */}
+       
 
             <Route
               path="/"
@@ -116,61 +87,37 @@ function AppContent() {
               }
             />
 
-            {/* ================= MAIN PAGES ================= */}
+        
 
+            <Route path="/services" element={<ServicesPage />} />
+
+            <Route path="/courses" element={<CoursesPage />} />
             <Route
-              path="/services"
-              element={<ServicesPage />}
+              path="/services/placement-training"
+              element={<PlacementTraining />}
             />
 
-            <Route
-              path="/courses"
-              element={<CoursesPage />}
-            />
 
-            {/* ================= SOFTWARE ================= */}
+            <Route path="/services/software" element={<SoftwareServices />} />
 
-            <Route
-              path="/services/software"
-              element={<SoftwareServices />}
-            />
+            <Route path="/services/mern-stack" element={<MernService />} />
 
-            <Route
-              path="/services/mern-stack"
-              element={<MernService />}
-            />
+            <Route path="/services/frontend" element={<FrontendService />} />
 
-            <Route
-              path="/services/frontend"
-              element={<FrontendService />}
-            />
+            <Route path="/services/backend" element={<BackendService />} />
 
-            <Route
-              path="/services/backend"
-              element={<BackendService />}
-            />
+            <Route path="/services/uiux" element={<UiUxService />} />
 
-            <Route
-              path="/services/uiux"
-              element={<UiUxService />}
-            />
-
-            <Route
-              path="/services/sql"
-              element={<SqlService />}
-            />
+            <Route path="/services/sql" element={<SqlService />} />
 
             <Route
               path="/services/logo-poster-design"
               element={<LogoPosterService />}
             />
 
-            {/* ================= HARDWARE ================= */}
+       
 
-            <Route
-              path="/services/hardware"
-              element={<HardwareServices />}
-            />
+            <Route path="/services/hardware" element={<HardwareServices />} />
 
             <Route
               path="/services/tech-support"
@@ -182,20 +129,13 @@ function AppContent() {
               element={<DesktopSupport />}
             />
 
-            <Route
-              path="/services/pcb"
-              element={<PCBService />}
-            />
+            <Route path="/services/pcb" element={<PCBService />} />
 
-            <Route
-              path="/services/iot"
-              element={<IoTService />}
-            />
-
+            <Route path="/services/iot" element={<IoTService />} />
           </Routes>
         </Suspense>
 
-        {/* Footer shown on every page */}
+
         <Footer />
       </div>
     </div>

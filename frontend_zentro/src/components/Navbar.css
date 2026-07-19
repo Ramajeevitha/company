@@ -1,6 +1,4 @@
-/* ==========================
-   NAVBAR
-========================== */
+
 
 .navbar {
   position: fixed;
@@ -33,9 +31,7 @@
   transition: .3s;
 }
 
-/* ==========================
-   LOGO
-========================== */
+
 
 .navbar-logo{
   display:flex;
@@ -64,9 +60,7 @@
   letter-spacing:.5px;
 }
 
-/* ==========================
-   MENU
-========================== */
+
 
 .menu{
   display:flex;
@@ -99,7 +93,7 @@
   color:#48cae4;
 }
 
-/* underline */
+
 
 .menu li::after{
   content:"";
@@ -125,9 +119,7 @@
   display:none;
 }
 
-/* ==========================
-   HAMBURGER
-========================== */
+
 
 .hamburger{
   display:none;
@@ -157,9 +149,6 @@
   transform:translateY(-7px) rotate(-45deg);
 }
 
-/* ==========================
-   TABLET
-========================== */
 
 @media(max-width:900px){
 
@@ -257,9 +246,7 @@
 
 }
 
-/* ==========================
-   MOBILE
-========================== */
+
 
 @media(max-width:600px){
 

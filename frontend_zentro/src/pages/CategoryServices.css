@@ -1,11 +1,11 @@
 .category-services {
   min-height: 100vh;
-  padding: 96px 8% 80px; /* keeps content just below navbar */
+  padding: 96px 8% 80px; 
   color: #fff;
   position: relative;
   overflow: hidden;
 }
-/* ===== top row for back button ===== */
+
 .page-top-row {
   max-width: 1280px;
   margin: 0 auto 18px;
@@ -14,7 +14,7 @@
   justify-content: flex-start;
 }
 
-/* ===== main layout ===== */
+
 .category-layout {
   max-width: 1280px;
   margin: 0 auto;
@@ -24,7 +24,7 @@
   align-items: start;
 }
 
-/* ===== sidebar ===== */
+
 .category-sidebar {
   background: linear-gradient(
     180deg,
@@ -143,7 +143,7 @@
   max-width: 720px;
 }
 
-/* ===== responsive ===== */
+
 @media (max-width: 1024px) {
   .category-layout {
     grid-template-columns: 1fr;

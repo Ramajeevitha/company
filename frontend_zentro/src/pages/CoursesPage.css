@@ -6,7 +6,7 @@
   color: #fff;
 }
 
-/* Background Animation */
+
 
 .floating-circle {
   position: absolute;
@@ -44,7 +44,7 @@
   }
 }
 
-/* Main Container */
+
 
 .courses-container {
   position: relative;
@@ -53,7 +53,7 @@
   margin: auto;
 }
 
-/* Header */
+
 
 .courses-header {
   text-align: center;
@@ -85,7 +85,7 @@
   line-height: 1.9;
 }
 
-/* Two Columns */
+
 
 .course-section {
   display: grid;
@@ -107,14 +107,14 @@
   font-size: 2rem;
 }
 
-/* Grid */
+
 
 .course-grid {
   display: grid;
   gap: 18px;
 }
 
-/* Cards */
+
 
 .course-card {
   background: rgba(255,255,255,.03);
@@ -146,7 +146,7 @@
 
 }
 
-/* Contact Box */
+
 
 .courses-contact-box {
   margin-top: 70px;
@@ -191,7 +191,7 @@
   box-shadow: 0 20px 36px rgba(72,202,228,.35);
 }
 
-/* Responsive */
+
 
 @media(max-width:992px){
 

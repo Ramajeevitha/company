@@ -20,7 +20,7 @@ const HardwareServices = () => {
       </div>
 
       <div className="category-layout">
-        {/* LEFT SIDEBAR */}
+    
         <aside className="category-sidebar">
           <h2>Hardware Services</h2>
           <ul>
@@ -36,7 +36,7 @@ const HardwareServices = () => {
           </ul>
         </aside>
 
-        {/* RIGHT HERO PANEL */}
+   
         <div className="category-content hardware-hero">
           <span className="tag">Hardware Support • PCB • IoT • Components</span>
 

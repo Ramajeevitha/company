@@ -16,7 +16,6 @@
   transition: all 0.28s ease;
 }
 
-/* IMPORTANT: do NOT keep top/left/position:absolute here */
 
 .back-to-services:hover {
   transform: translateY(-2px);

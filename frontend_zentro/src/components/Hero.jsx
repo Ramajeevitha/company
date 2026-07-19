@@ -8,7 +8,7 @@ const Hero = () => {
       <div className="hero-bg-glow hero-glow-2"></div>
 
       <div className="hero-container">
-        {/* Logo + Company */}
+   
         <div className="hero-top">
           <div className="hero-logo">
             <img src="/assets/uyaron_logo.png" alt="Uyaron Logo" />
@@ -27,7 +27,7 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Main Content */}
+
 
         <div className="hero-main">
           <h1 className="hero-title">

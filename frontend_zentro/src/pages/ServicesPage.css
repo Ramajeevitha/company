@@ -1,4 +1,4 @@
-/* ================= PAGE WRAPPER ================= */
+
 .services-page {
   position: relative;
   min-height: 100vh;
@@ -10,7 +10,7 @@
   box-sizing: border-box;
 }
 
-/* dark soft overlay */
+
 .services-page::before {
   content: "";
   position: absolute;
@@ -20,7 +20,7 @@
   z-index: 0;
 }
 
-/* extra floating glow blobs */
+
 .services-page::after {
   content: "";
   position: absolute;
@@ -35,7 +35,7 @@
   pointer-events: none;
 }
 
-/* ================= CONTENT WRAPPER ================= */
+
 .services-page-overlay {
   position: relative;
   z-index: 2;
@@ -44,14 +44,13 @@
   text-align: center;
 }
 
-/* ================= BACK BUTTON ================= */
 .services-page-overlay .back-to-services {
   position: absolute;
   top: -10px;
   left: -30px;
 }
 
-/* ================= TITLE ================= */
+
 .services-page-title {
   font-size: 3.5rem;
   font-weight: 800;
@@ -72,7 +71,6 @@
   background: linear-gradient(90deg, #48cae4, #0ea5e9, #7b61ff);
 }
 
-/* ================= SUBTITLE ================= */
 .services-page-subtitle {
   max-width: 760px;
   margin: 0 auto 60px;
@@ -81,7 +79,7 @@
   line-height: 1.9;
 }
 
-/* ================= GRID ================= */
+
 .services-page-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(320px, 1fr));
@@ -89,7 +87,7 @@
   align-items: stretch;
 }
 
-/* ================= CARD ================= */
+
 .services-page-card {
   position: relative;
   padding: 42px 34px 36px;
@@ -114,7 +112,7 @@
     border-color 0.35s ease;
 }
 
-/* top glow inside each card */
+
 .services-page-card::before {
   content: "";
   position: absolute;
@@ -126,7 +124,7 @@
   z-index: 0;
 }
 
-/* decorative top border shine */
+
 .services-page-card::after {
   content: "";
   position: absolute;
@@ -151,13 +149,11 @@
     0 0 0 1px rgba(72, 202, 228, 0.06);
 }
 
-/* make card content above glow */
 .services-page-card > * {
   position: relative;
   z-index: 2;
 }
 
-/* ================= CARD TITLE ================= */
 .services-page-card h3 {
   font-size: 2rem;
   font-weight: 800;
@@ -166,7 +162,6 @@
   color: #ffffff;
 }
 
-/* accent underline under card heading */
 .services-page-card h3::after {
   content: "";
   display: block;
@@ -177,7 +172,7 @@
   background: linear-gradient(90deg, #48cae4, #7b61ff);
 }
 
-/* ================= CARD TEXT ================= */
+
 .services-page-card p {
   color: #dbeafe;
   font-size: 1rem;
@@ -186,7 +181,7 @@
   max-width: 95%;
 }
 
-/* ================= BUTTON ================= */
+
 .services-page-card button {
   position: relative;
   border: none;
@@ -205,7 +200,7 @@
   overflow: hidden;
 }
 
-/* moving shine on button */
+
 .services-page-card button::before {
   content: "";
   position: absolute;
@@ -232,13 +227,12 @@
   left: 140%;
 }
 
-/* ================= OPTIONAL CARD VARIATION ================= */
-/* makes hardware card slightly different accent */
+
 .services-page-card:nth-child(2) h3::after {
   background: linear-gradient(90deg, #7b61ff, #48cae4);
 }
 
-/* ================= RESPONSIVE ================= */
+
 @media (max-width: 1100px) {
   .services-page {
     padding: 120px 6% 70px;

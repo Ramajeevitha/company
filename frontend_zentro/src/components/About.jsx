@@ -96,7 +96,7 @@ const About = () => {
             </div>
           </div>
 
-          {/* Statistics */}
+         
           <div className="about-stats">
             <div className="stat-card">
               <Counter end={30} suffix="+" />
@@ -114,7 +114,7 @@ const About = () => {
             </div>
           </div>
 
-          {/* MSME Card */}
+     
           <div className="msme-card">
             <div className="msme-badge">
               <span>Government of India</span>

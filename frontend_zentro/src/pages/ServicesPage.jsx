@@ -8,7 +8,7 @@ const ServicesPage = () => {
   return (
     <section className="services-page">
       <div className="services-page-overlay">
-        {/* Back to home services section */}
+      
         <BackToServices to="/" scrollTo="services" />
 
         <h1 className="services-page-title">Our Services</h1>
@@ -20,8 +20,8 @@ const ServicesPage = () => {
           <div className="services-page-card">
             <h3>Software Solutions</h3>
             <p>
-              Web development, frontend, backend, MERN, PERN, UI/UX, Django,
-              databases, and more.
+              Web development, frontend, backend, MERN, PERN, UI/UX, databases,
+              and more.
             </p>
             <button onClick={() => navigate("/services/software")}>
               Explore Software
@@ -38,6 +38,7 @@ const ServicesPage = () => {
               Explore Hardware
             </button>
           </div>
+        
         </div>
       </div>
     </section>
