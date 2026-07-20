@@ -9,7 +9,6 @@ const softwareCourses = [
   "SQL & Database Management",
   "Languages : C, JavaScript, Java",
   "DSA : JavaScript , Java",
-  
 ];
 
 const hardwareCourses = [
@@ -45,7 +44,6 @@ const CoursesPage = () => {
         </div>
 
         <div className="course-section">
-        
           <div className="course-column">
             <h2>💻 Software Courses</h2>
 
@@ -79,7 +77,6 @@ const CoursesPage = () => {
           </div>
         </div>
 
-       
         <div className="courses-contact-box">
           <h3>Ready to Start Your Learning Journey?</h3>
 
@@ -88,8 +85,37 @@ const CoursesPage = () => {
             practical hardware skills, we're here to help you build a successful
             career with hands-on training and expert guidance.
           </p>
+        </div>
+        {/* Certificate Section */}
 
-      
+        <div className="certificate-section">
+          <div className="certificate-image">
+            <img src="/assets/certificate.png" alt="Uyaron Certificate" />
+          </div>
+
+          <div className="certificate-content">
+            <span className="certificate-tag">
+              Industry Recognized Certificate
+            </span>
+
+            <h2>Earn a Professional Course Completion Certificate</h2>
+
+            <p>
+              Every learner who successfully completes our training program
+              receives an official Uyaron Course Completion Certificate. Our
+              certificates validate your practical skills, project experience,
+              and industry-ready knowledge, helping you strengthen your resume
+              and stand out during internships and placement opportunities.
+            </p>
+
+            <ul className="certificate-list">
+              <li>✔ Industry-Oriented Curriculum</li>
+              <li>✔ Hands-on Project Experience</li>
+              <li>✔ Resume & Portfolio Enhancement</li>
+              <li>✔ Placement Preparation Support</li>
+              <li>✔ Lifetime Learning Community</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>

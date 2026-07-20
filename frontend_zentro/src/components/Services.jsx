@@ -53,7 +53,7 @@ const Services = () => {
 
             <p>
               Learn practical skills through hands-on training in MERN Stack,
-              Frontend, Backend, UI/UX, SQL, Python, Java, and modern software
+              Frontend, Backend, UI/UX, SQL, C, Java, and modern software
               technologies.
             </p>
 
@@ -85,7 +85,7 @@ const Services = () => {
 
             <p>
               Join real-time internships in Software Development, UI/UX,
-              Hardware, IoT, and emerging technologies with live project
+              Hardware, IoT,Pcb, and emerging technologies with live project
               experience and mentorship.
             </p>
 
