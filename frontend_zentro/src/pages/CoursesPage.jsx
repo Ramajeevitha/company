@@ -5,9 +5,9 @@ const softwareCourses = [
   "Full Stack Web Development",
   "Frontend Development",
   "Backend Development",
-  "UI / UX Design",
+  "Cyber Security and Management",
   "SQL & Database Management",
-  "Languages : C, JavaScript, Java",
+  "Languages : C, JavaScript,Python, Java",
   "DSA : JavaScript , Java",
 ];
 
