@@ -5,6 +5,7 @@ const softwareCourses = [
   "Full Stack Web Development",
   "Frontend Development",
   "Backend Development",
+  "Artificial Intelligence and Machine learning",
   "Cyber Security and Management",
   "SQL & Database Management",
   "Languages : C, JavaScript,Python, Java",
@@ -85,6 +86,82 @@ const CoursesPage = () => {
             practical hardware skills, we're here to help you build a successful
             career with hands-on training and expert guidance.
           </p>
+        </div>
+        {/* Student Experience Section */}
+        <div className="academy-section">
+          <div className="academy-header">
+            <span className="academy-tag">UYARON ACADEMY</span>
+            <h2>What You'll Experience</h2>
+            <p>
+              Our learning approach is designed to transform beginners into
+              confident, industry-ready professionals through practical learning
+              and continuous growth.
+            </p>
+          </div>
+
+          <div className="academy-grid">
+            <div className="academy-card">
+              <div className="academy-icon">💻</div>
+              <h3>Live Practical Classes</h3>
+              <p>
+                Interactive sessions focused on real coding, problem solving and
+                hands-on implementation.
+              </p>
+            </div>
+
+            <div className="academy-card">
+              <div className="academy-icon">🧩</div>
+              <h3>Daily Coding Practice</h3>
+              <p>
+                Build consistency with coding challenges, logical thinking and
+                DSA practice every day.
+              </p>
+            </div>
+
+            <div className="academy-card">
+              <div className="academy-icon">📝</div>
+              <h3>Quizzes & Assessments</h3>
+              <p>
+                Regular quizzes and weekly evaluations help reinforce concepts
+                and measure progress.
+              </p>
+            </div>
+
+            <div className="academy-card">
+              <div className="academy-icon">🏆</div>
+              <h3>Leaderboards & Rewards</h3>
+              <p>
+                Earn XP, unlock achievement badges and compete on the weekly
+                Uyaron leaderboard.
+              </p>
+            </div>
+
+            <div className="academy-card">
+              <div className="academy-icon">🎯</div>
+              <h3>Placement Readiness</h3>
+              <p>
+                Resume building, LinkedIn optimization, mock interviews and
+                company-specific preparation.
+              </p>
+            </div>
+
+            <div className="academy-card">
+              <div className="academy-icon">🌟</div>
+              <h3>Student Spotlight</h3>
+              <p>
+                Outstanding performers are featured on Uyaron's social platforms
+                with a digital certificate.
+              </p>
+            </div>
+          </div>
+
+          <div className="academy-quote">
+            <h3>Learn → Practice → Compete → Get Certified → Get Hired</h3>
+            <p>
+              At Uyaron, success is measured by career transformation—not just
+              course completion.
+            </p>
+          </div>
         </div>
         {/* Certificate Section */}
 
