@@ -158,7 +158,7 @@ const CoursesPage = () => {
           <div className="academy-quote">
             <h3>Learn → Practice → Compete → Get Certified → Get Hired</h3>
             <p>
-              At Uyaron, success is measured by career transformation—not just
+              At Uyaron, success is measured by career transformation, not just
               course completion.
             </p>
           </div>
