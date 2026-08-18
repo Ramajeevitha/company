@@ -2,19 +2,21 @@ import { useNavigate } from "react-router-dom";
 import "./CoursesPage.css";
 
 const softwareCourses = [
-  "Full Stack Web Development",
+  "GEN-AI",
+  "UI/UX",
+  "Full Stack Web Development(MERN)",
   "Frontend Development",
   "Backend Development",
   "Artificial Intelligence and Machine learning",
   "Cyber Security and Management",
-  "SQL & Database Management",
   "Languages : C, JavaScript,Python, Java",
-  "DSA : JavaScript , Java",
+  "DSA : JavaScript ,Python, Java",
 ];
 
 const hardwareCourses = [
   "IoT Fundamentals",
   "PCB Designing",
+  "VLSI",
   "Embedded Systems",
   "Arduino Programming",
   "Raspberry Pi Projects",
