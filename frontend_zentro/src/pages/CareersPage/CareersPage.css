@@ -1,0 +1,171 @@
+.careers-page {
+  padding: 120px 5% 80px;
+  min-height: 100vh;
+  color: white;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.page-header h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  background: linear-gradient(90deg, #48cae4, #7b61ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.page-header p {
+  font-size: 1.1rem;
+  color: #cfd7e5;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.careers-content {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.hiring-domains h2 {
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.domains-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.domain-chip {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 12px 24px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.domain-chip:hover {
+  border-color: #48cae4;
+  background: rgba(72, 202, 228, 0.1);
+}
+
+.application-box {
+  background: rgba(12, 18, 35, 0.6);
+  border: 1px solid rgba(123, 97, 255, 0.3);
+  padding: 40px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.application-box h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.application-box p {
+  font-size: 1.1rem;
+  color: #a3b1c6;
+  margin-bottom: 20px;
+}
+
+.email-link {
+  color: #48cae4;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.email-link:hover {
+  text-decoration: underline;
+}
+
+.email-instructions {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 25px;
+  border-radius: 12px;
+  text-align: left;
+  margin-bottom: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.email-instructions p {
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.email-instructions ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.email-instructions li {
+  margin-bottom: 12px;
+  color: #cfd7e5;
+  font-size: 1.05rem;
+  padding-left: 20px;
+  position: relative;
+}
+
+.email-instructions li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: #7b61ff;
+  font-size: 1.2rem;
+}
+
+.email-instructions strong {
+  color: #48cae4;
+}
+
+.apply-btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #48cae4, #7b61ff);
+  color: white;
+  padding: 14px 32px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: 0.3s;
+  border: none;
+}
+
+.apply-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(123, 97, 255, 0.4);
+}
+
+@media (max-width: 600px) {
+  .application-box {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 380px) {
+  .page-header h1 {
+    font-size: 2.2rem;
+  }
+  .application-box h2 {
+    font-size: 1.6rem;
+  }
+  .email-instructions li {
+    font-size: 0.95rem;
+  }
+}

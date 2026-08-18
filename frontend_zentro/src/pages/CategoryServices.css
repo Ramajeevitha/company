@@ -56,7 +56,7 @@
   width: 120px;
   height: 3px;
   margin: 12px auto 0;
-  border-radius: 999px;
+  border-radius: 8px;
   background: linear-gradient(90deg, #48cae4, #7b61ff);
 }
 
@@ -116,11 +116,7 @@
 
 .category-content::before {
   content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at top right, rgba(72, 202, 228, 0.12), transparent 32%),
-    radial-gradient(circle at bottom left, rgba(123, 97, 255, 0.1), transparent 35%);
+  background: rgba(12, 18, 35, 0.4);
   pointer-events: none;
 }
 

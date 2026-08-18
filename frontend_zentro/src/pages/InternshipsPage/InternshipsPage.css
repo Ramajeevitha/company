@@ -1,0 +1,118 @@
+.internships-page {
+  padding: 150px 8% 80px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.internships-content {
+  text-align: center;
+  max-width: 800px;
+  width: 100%;
+}
+
+.coming-soon-badge {
+  display: inline-block;
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.internships-content h1 {
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.internships-subtitle {
+  font-size: 1.1rem;
+  color: #cfd7e5;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.application-box {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 40px;
+  text-align: left;
+  backdrop-filter: blur(10px);
+}
+
+.application-box h2 {
+  font-size: 1.8rem;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.application-box p {
+  color: #cfd7e5;
+  font-size: 1.05rem;
+  margin-bottom: 20px;
+}
+
+.email-link {
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.email-instructions {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.email-instructions ul {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.email-instructions li {
+  color: #cfd7e5;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.email-instructions strong {
+  color: #fff;
+}
+
+.apply-btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #38bdf8, #0ea5e9);
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+  width: 100%;
+  text-align: center;
+}
+
+.apply-btn:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .internships-page {
+    padding: 120px 5% 60px;
+  }
+  .internships-content h1 {
+    font-size: 2rem;
+  }
+  .application-box {
+    padding: 25px;
+  }
+}

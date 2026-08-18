@@ -1,0 +1,145 @@
+
+.footer {
+  position: relative;
+  padding: 100px 8% 36px;
+  background: transparent;
+  color: #eaf6ff;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.footer-container {
+  position: relative;
+  z-index: 1;
+}
+
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 42px;
+  margin-bottom: 50px;
+}
+
+
+.footer-logo-container {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 18px;
+}
+
+.footer-logo {
+  width: 90px;
+}
+
+.footer-brand-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.footer-brand p {
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.74);
+  max-width: 320px;
+}
+
+
+.footer-heading {
+  position: relative;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #ffffff;
+  letter-spacing: 0.2px;
+}
+
+.footer-heading::after {
+  content: "";
+  width: 52px;
+  height: 3px;
+  background: linear-gradient(90deg, #38bdf8, #0ea5e9);
+  display: block;
+  margin-top: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 14px rgba(56, 189, 248, 0.35);
+}
+
+
+.footer-links {
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  list-style: none;
+  margin-bottom: 12px;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.74);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-links li:hover {
+  color: #38bdf8;
+  transform: translateX(4px);
+}
+
+
+.footer-contact {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.footer-contact li,
+.footer-contact a {
+  color: rgba(255, 255, 255, 0.74);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-contact a:hover {
+  color: #38bdf8;
+}
+
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 24px;
+  text-align: center;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.62);
+}
+
+@media (max-width: 992px) {
+  .footer {
+    padding: 85px 6% 32px;
+  }
+
+  .footer-grid {
+    gap: 34px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 75px 5% 28px;
+  }
+
+  .footer-grid {
+    gap: 28px;
+    margin-bottom: 36px;
+  }
+
+  .footer-brand p,
+  .footer-links li,
+  .footer-contact li,
+  .footer-contact a {
+    font-size: 0.95rem;
+  }
+}
